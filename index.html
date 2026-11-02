@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Víctor Medina Serrano · Técnico en Automatización y Robótica Industrial</title>
+<meta name="description" content="CV online de Víctor Medina Serrano, Técnico en Automatización y Robótica Industrial. PLC Siemens, Schneider, Robots Kuka, Fanuc, Doosan, Yaskawa, AGV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f17;
+    --bg-2:#101624;
+    --card:#141c2e;
+    --card-2:#18213a;
+    --border:#243049;
+    --accent:#00d4ff;
+    --accent-2:#ff7a18;
+    --text:#e8edf5;
+    --muted:#9aa7bd;
+    --ok:#39d98a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Rajdhani',sans-serif;letter-spacing:.5px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ====== NAV ====== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem clamp(1rem,5vw,3rem);
+    background:rgba(11,15,23,.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .brand{font-size:1.25rem;font-weight:700;color:var(--text)}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+
+  /* ====== HERO ====== */
+  header{
+    position:relative;
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:7rem clamp(1rem,8vw,6rem) 4rem;
+    background:
+      linear-gradient(90deg, rgba(11,15,23,.96) 0%, rgba(11,15,23,.85) 38%, rgba(11,15,23,.42) 100%),
+      url('assets/automatizacion.jpg') center / cover no-repeat,
+      radial-gradient(ellipse 60% 50% at 75% 30%, rgba(0,212,255,.08), transparent),
+      radial-gradient(ellipse 50% 40% at 20% 80%, rgba(255,122,24,.06), transparent),
+      var(--bg);
+  }
+  .grid-overlay{
+    position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(0,212,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,.045) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);
+    -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);
+  }
+  .tagline{
+    display:inline-flex;align-items:center;gap:.5rem;
+    color:var(--accent);font-weight:600;font-size:.85rem;
+    text-transform:uppercase;letter-spacing:2.5px;margin-bottom:1.2rem;
+  }
+  .tagline::before{content:"";width:36px;height:2px;background:var(--accent)}
+  header h1{
+    font-size:clamp(2.6rem,7vw,5rem);
+    font-weight:700;line-height:1.05;text-transform:uppercase;
+  }
+  header h1 em{font-style:normal;color:var(--accent)}
+  .subtitle{
+    font-size:clamp(1.1rem,2.5vw,1.5rem);
+    color:var(--muted);margin-top:1rem;max-width:640px;
+  }
+  .quote{
+    margin-top:1.8rem;max-width:560px;
+    padding:1rem 1.2rem;border-left:3px solid var(--accent-2);
+    background:rgba(255,122,24,.06);border-radius:0 10px 10px 0;
+    color:#cdd6e5;font-style:italic;
+  }
+  .hero-cta{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.8rem 1.6rem;border-radius:8px;font-weight:600;font-size:.95rem;
+    transition:transform .2s, box-shadow .2s;text-decoration:none;
+  }
+  .btn:hover{transform:translateY(-2px);text-decoration:none}
+  .btn-primary{background:var(--accent);color:#04131a;box-shadow:0 0 24px rgba(0,212,255,.35)}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);background:rgba(255,255,255,.03)}
+  .hero-stats{
+    display:flex;gap:clamp(1.5rem,5vw,3.5rem);margin-top:3.2rem;flex-wrap:wrap;
+  }
+  .stat .num{font-family:'Rajdhani';font-size:2.4rem;font-weight:700;color:var(--accent)}
+  .stat .lbl{color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+
+  /* ====== SECTIONS ====== */
+  section{padding:5rem clamp(1rem,8vw,6rem);position:relative}
+  section:nth-of-type(even){background:var(--bg-2)}
+  body > section{
+    background-image:linear-gradient(90deg,rgba(11,15,23,.96),rgba(11,15,23,.8)),url('assets/industria.jpg');
+    background-position:right center;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+  body > section:nth-of-type(even){
+    background-image:linear-gradient(90deg,rgba(16,22,36,.95),rgba(16,22,36,.82)),url('assets/fabrica.jpg');
+  }
+  body > #software{
+    background-image:linear-gradient(90deg,rgba(16,22,36,.94),rgba(16,22,36,.82)),url('assets/cuadro-electrico.jpg');
+    background-position:center;
+  }
+  .sec-head{margin-bottom:3rem}
+  .sec-head .kicker{
+    color:var(--accent-2);font-weight:600;font-size:.8rem;
+    text-transform:uppercase;letter-spacing:2.5px;
+  }
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);text-transform:uppercase;margin-top:.3rem}
+  .sec-head h2::after{
+    content:"";display:block;width:64px;height:3px;margin-top:.6rem;
+    background:linear-gradient(90deg,var(--accent),transparent);border-radius:2px;
+  }
+
+  /* ====== TIMELINE ====== */
+  .timeline{position:relative;max-width:900px}
+  .timeline::before{
+    content:"";position:absolute;left:11px;top:4px;bottom:4px;width:2px;
+    background:linear-gradient(var(--accent), var(--border));
+  }
+  .t-item{position:relative;padding:0 0 2.6rem 3rem}
+  .t-item:last-child{padding-bottom:0}
+  .t-item::before{
+    content:"";position:absolute;left:3px;top:6px;width:18px;height:18px;border-radius:50%;
+    background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 12px rgba(0,212,255,.6);
+  }
+  .t-item.current::before{background:var(--accent)}
+  .t-date{
+    display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:1px;
+    color:var(--accent);text-transform:uppercase;
+    background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);
+    padding:.2rem .7rem;border-radius:999px;margin-bottom:.6rem;
+  }
+  .t-item.current .t-date{color:#04131a;background:var(--accent)}
+  .t-item h3{font-size:1.35rem}
+  .t-item .company{color:var(--accent-2);font-weight:600;font-size:.95rem;margin-bottom:.5rem}
+  .t-item ul{list-style:none;margin-top:.5rem}
+  .t-item li{
+    color:var(--muted);padding-left:1.3rem;position:relative;margin-bottom:.3rem;
+  }
+  .t-item li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+
+  /* ====== SKILLS ====== */
+  .skills-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:1.2rem 2.5rem;max-width:1100px;
+  }
+  .skill{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem}
+  .skill .row{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin-bottom:.5rem}
+  .skill .cat{text-align:right}
+  .skill .name{font-weight:600}
+  .skill .cat{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .bar{height:7px;background:#0d1322;border-radius:99px;overflow:hidden}
+  .bar i{
+    display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--accent),#4de8ff);
+    box-shadow:0 0 10px rgba(0,212,255,.5);
+    transition:width 1.2s cubic-bezier(.25,.8,.3,1);
+  }
+  .legend{color:var(--muted);font-size:.85rem;margin-top:1.4rem}
+
+  /* ====== ROBOT / PLC BADGES ====== */
+  .tech-cloud{display:flex;flex-wrap:wrap;gap:.7rem;max-width:1000px;margin-top:.4rem}
+  .chip{
+    padding:.55rem 1.1rem;border-radius:999px;font-size:.9rem;font-weight:500;
+    background:var(--card);border:1px solid var(--border);color:#cdd6e5;
+    transition:border-color .2s, color .2s, transform .2s;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .chip.hot{border-color:rgba(255,122,24,.5);color:var(--accent-2)}
+
+  /* ====== CARDS (educación, competencias, extra) ====== */
+  .cards{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.4rem;max-width:1100px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:1.6rem;transition:transform .25s, border-color .25s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .card .icon{font-size:1.7rem;margin-bottom:.8rem}
+  .card h3{font-size:1.15rem;margin-bottom:.2rem}
+  .card .when{color:var(--accent);font-size:.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+  .card p{color:var(--muted);font-size:.93rem;margin-top:.5rem}
+
+  .comp-grid{display:flex;flex-wrap:wrap;gap:.8rem;max-width:900px}
+  .comp{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--card);border:1px solid var(--border);
+    padding:.7rem 1.2rem;border-radius:10px;font-weight:500;font-size:.92rem;
+  }
+  .comp::before{content:"✔";color:var(--ok);font-size:.85rem}
+
+  /* ====== IDIOMAS ====== */
+  .lang-grid{display:flex;gap:1.4rem;flex-wrap:wrap}
+  .lang{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:1.4rem 1.8rem;min-width:220px;
+  }
+  .lang h3{font-size:1.1rem}
+  .dots{display:flex;gap:.4rem;margin-top:.6rem}
+  .dot{width:12px;height:12px;border-radius:50%;background:#0d1322;border:1px solid var(--border)}
+  .dot.on{background:var(--accent);border-color:var(--accent);box-shadow:0 0 8px rgba(0,212,255,.6)}
+  .lang .lvl{color:var(--muted);font-size:.85rem;margin-top:.4rem}
+
+  /* ====== CONTACTO ====== */
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.2rem;max-width:1100px;
+  }
+  .c-card{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:1.5rem;text-align:center;transition:border-color .25s, transform .25s;
+  }
+  .c-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .c-card .icon{font-size:1.8rem;margin-bottom:.6rem}
+  .c-card .lbl{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px}
+  .c-card .val{font-weight:600;margin-top:.3rem;word-break:break-word;font-size:.95rem}
+
+  footer{
+    text-align:center;padding:2.2rem 1rem;color:var(--muted);font-size:.85rem;
+    border-top:1px solid var(--border);background:var(--bg);
+  }
+
+  /* ====== REVEAL ANIM ====== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  @media(max-width:640px){
+    .nav-links{display:none}
+    .hero-stats{gap:1.4rem}
+    header{background-position:center,65% center,center,center,center}
+  }
+
+  /* ====== BOTÓN PDF FLOTANTE ====== */
+  .pdf-fab{
+    position:fixed;right:1.4rem;bottom:1.4rem;z-index:200;
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.85rem 1.4rem;border:none;border-radius:999px;cursor:pointer;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;
+    background:var(--accent-2);color:#1a0d00;
+    box-shadow:0 4px 20px rgba(255,122,24,.45);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .pdf-fab:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(255,122,24,.6)}
+
+  /* ====== CV PDF DEDICADO (oculto en pantalla) ====== */
+  #cv-print{display:none}
+
+  @media print{
+    @page{size:A4;margin:0}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body > *:not(#cv-print){display:none !important}
+    body{background:#fff}
+    #cv-print{
+      display:grid;
+      grid-template-columns:64mm 1fr;
+      width:210mm;min-height:296mm;
+      font-family:'Inter',sans-serif;
+      font-size:9pt;line-height:1.45;color:#2a3342;
+    }
+    /* Neutralizar estilos de la web dentro del CV impreso */
+    #cv-print section{background:transparent !important;padding:0 !important;position:static}
+    #cv-print h1,#cv-print h2,#cv-print h3{text-transform:none}
+
+    /* --- Barra lateral --- */
+    .cvp-side{
+      background:#122033;color:#dce5f0;
+      padding:7mm 6.5mm 5mm;line-height:1.35;
+    }
+    .cvp-side h1{
+      font-family:'Rajdhani';font-size:19pt;line-height:1.05;
+      color:#fff;text-transform:uppercase !important;letter-spacing:1px;
+    }
+    .cvp-side h1 span{color:#00d4ff}
+    .cvp-role{
+      margin-top:2mm;font-size:8.5pt;font-weight:600;letter-spacing:1.5px;
+      text-transform:uppercase;color:#00d4ff;
+    }
+    .cvp-side h2{
+      font-family:'Rajdhani';font-size:10.5pt;text-transform:uppercase !important;
+      letter-spacing:1.5px;color:#fff;margin:4mm 0 1.8mm;
+      padding-bottom:1mm;border-bottom:1.5px solid #00d4ff;
+    }
+    .cvp-contact{list-style:none;font-size:8pt}
+    .cvp-contact li{margin-bottom:1.2mm;display:flex;gap:1.8mm;align-items:baseline;word-break:break-all}
+    .cvp-contact b{color:#00d4ff;font-weight:600;flex-shrink:0}
+    .cvp-skill{margin-bottom:1.6mm}
+    .cvp-skill .n{display:flex;justify-content:space-between;font-size:8pt;margin-bottom:.6mm}
+    .cvp-skill .n i{font-style:normal;color:#8fa3bd;font-size:7pt}
+    .cvp-sbar{height:1.6mm;background:#24354d;border-radius:2mm}
+    .cvp-sbar i{display:block;height:100%;background:#00d4ff;border-radius:2mm}
+    .cvp-tags{display:flex;flex-wrap:wrap;gap:1.2mm}
+    .cvp-tag{
+      font-size:7pt;padding:.7mm 2mm;border-radius:3mm;
+      border:.5pt solid #3b506e;color:#c3d0e2;background:transparent;
+    }
+    .cvp-lang{font-size:8pt;margin-bottom:1.2mm;display:flex;justify-content:space-between}
+    .cvp-lang i{font-style:normal;color:#8fa3bd}
+    .cvp-list{list-style:none;font-size:8pt}
+    .cvp-list li{margin-bottom:.9mm;padding-left:3.5mm;position:relative}
+    .cvp-list li::before{content:"▸";position:absolute;left:0;color:#00d4ff}
+
+    /* --- Columna principal --- */
+    .cvp-main{padding:8mm 8mm 6mm;background:#fff}
+    .cvp-main h2{
+      font-family:'Rajdhani';font-size:13pt;text-transform:uppercase !important;
+      letter-spacing:1.5px;color:#122033;margin:0 0 2.5mm;
+      display:flex;align-items:center;gap:2.5mm;
+    }
+    .cvp-main h2::after{content:"";flex:1;height:.6mm;background:linear-gradient(90deg,#00b4dd,transparent)}
+    .cvp-main section{margin-bottom:4.5mm !important;break-inside:avoid-page}
+    .cvp-profile{
+      font-size:9pt;color:#4a5568;font-style:italic;
+      padding:3mm 4mm;background:#f2f7fb;border-left:1mm solid #ff7a18;border-radius:0 2mm 2mm 0;
+    }
+    .cvp-job{margin-bottom:3.5mm;padding-left:5mm;position:relative;break-inside:avoid}
+    .cvp-job::before{
+      content:"";position:absolute;left:0;top:1.4mm;width:2.4mm;height:2.4mm;
+      border-radius:50%;background:#fff;border:.6mm solid #00b4dd;
+    }
+    .cvp-job.cur::before{background:#00b4dd}
+    .cvp-job::after{
+      content:"";position:absolute;left:1mm;top:5mm;bottom:-3.5mm;width:.4mm;background:#d4e2ee;
+    }
+    .cvp-job:last-child::after{display:none}
+    .cvp-job .d{
+      font-size:7.5pt;font-weight:700;color:#0090b8;
+      text-transform:uppercase;letter-spacing:.8px;
+    }
+    .cvp-job h3{font-family:'Inter';font-size:10pt;font-weight:700;color:#1a2433}
+    .cvp-job .c{font-size:8.5pt;font-weight:600;color:#d96a10;margin-bottom:1mm}
+    .cvp-job ul{list-style:none;font-size:8.5pt;color:#4a5568}
+    .cvp-job ul li{padding-left:3.5mm;position:relative;margin-bottom:.6mm}
+    .cvp-job ul li::before{content:"▸";position:absolute;left:0;color:#00b4dd}
+
+    .cvp-edu{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
+    .cvp-edu-item{
+      border:.5pt solid #d4e2ee;border-radius:2mm;padding:2.5mm 3mm;break-inside:avoid;
+    }
+    .cvp-edu-item .d{font-size:7pt;font-weight:700;color:#0090b8;text-transform:uppercase;letter-spacing:.8px}
+    .cvp-edu-item h3{font-size:8.5pt;font-weight:700;color:#1a2433;line-height:1.3}
+    .cvp-edu-item p{font-size:7.5pt;color:#4a5568;margin-top:.6mm}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">VM<span>·</span>S</div>
+  <div class="nav-links">
+    <a href="#experiencia">Experiencia</a>
+    <a href="#software">Software</a>
+    <a href="#formacion">Formación</a>
+    <a href="#competencias">Competencias</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header>
+  <div class="grid-overlay"></div>
+  <div class="tagline">Automatización · Robótica Industrial · PLC</div>
+  <h1>Víctor<br>Medina <em>Serrano</em></h1>
+  <p class="subtitle">Técnico en Automatización y Robótica Industrial con más de <strong><span id="years-inline">8</span> años de experiencia</strong> programando PLC, robots industriales y sistemas AGV.</p>
+  <div class="quote">"Soy una persona comprometida con mi desarrollo profesional y personal. Mi objetivo es abordar soluciones que aporten un valor real a mi empresa."</div>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#contacto">📞 Contactar</a>
+    <a class="btn btn-ghost" href="#experiencia">Ver experiencia ↓</a>
+    <a class="btn btn-ghost" href="#" onclick="descargarPDF(); return false;">📄 Descargar PDF</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num" id="years-counter" data-count="8">0</div><div class="lbl">Años de experiencia</div></div>
+    <div class="stat"><div class="num" data-count="6">0</div><div class="lbl">Marcas de robots</div></div>
+    <div class="stat"><div class="num" id="software-counter" data-count="13">0</div><div class="lbl">Softwares dominados</div></div>
+  </div>
+</header>
+
+<!-- ================= EXPERIENCIA ================= -->
+<section id="experiencia">
+  <div class="sec-head reveal">
+    <div class="kicker">Trayectoria</div>
+    <h2>Experiencia Laboral</h2>
+  </div>
+  <div class="timeline">
+    <div class="t-item current reveal">
+      <span class="t-date">Febrero 2024 — Actualidad</span>
+      <h3>Técnico de Mejora Continua y Fiabilidad</h3>
+      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+      <ul>
+        <li>Mejora continua y fiabilidad de línea robotizada en cliente ONCE.</li>
+        <li>Optimización de procesos automatizados en entorno productivo real.</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <span class="t-date">Diciembre 2019 — Enero 2024</span>
+      <h3>Técnico en Automatización y Robótica Industrial</h3>
+      <div class="company">LM GROUP</div>
+      <ul>
+        <li>Creación de proyectos con PLC's Siemens.</li>
+        <li>Creación de proyectos con robots Doosan y Kuka.</li>
+        <li>Creación de proyectos con PLC's Berghof.</li>
+        <li>Creación de proyectos con robot Fanuc.</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <span class="t-date">Junio 2018 — Diciembre 2019</span>
+      <h3>Automatista</h3>
+      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+      <ul>
+        <li>Creación y modificación de proyectos con PLC's y pantallas Siemens.</li>
+        <li>Creación y modificación de proyectos con PLC's y pantallas Schneider.</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <span class="t-date">Abril 2018 — Junio 2018</span>
+      <h3>Automatista en prácticas</h3>
+      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+      <ul>
+        <li>Creación y modificación de proyectos con PLC's Siemens.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOFTWARE ================= -->
+<section id="software">
+  <div class="sec-head reveal">
+    <div class="kicker">Conocimientos técnicos</div>
+    <h2>Software &amp; Tecnologías</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill reveal"><div class="row"><span class="name">TIA Portal</span><span class="cat">PLC Siemens</span></div><div class="bar"><i data-lvl="95"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">STEP 7</span><span class="cat">PLC Siemens</span></div><div class="bar"><i data-lvl="90"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">PL7</span><span class="cat">PLC Schneider</span></div><div class="bar"><i data-lvl="80"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Robot Doosan</span><span class="cat">Robótica colaborativa</span></div><div class="bar"><i data-lvl="90"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">WorkVisual</span><span class="cat">Robots Kuka</span></div><div class="bar"><i data-lvl="40"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Fanuc</span><span class="cat">Robótica industrial</span></div><div class="bar"><i data-lvl="80"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Robot ABB</span><span class="cat">Robótica industrial</span></div><div class="bar"><i data-lvl="50"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">RobotStudio</span><span class="cat">Robots ABB</span></div><div class="bar"><i data-lvl="50"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">YASKAWA</span><span class="cat">Robótica · Manipulación</span></div><div class="bar"><i data-lvl="75"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">OMRON</span><span class="cat">Automatización integrada</span></div><div class="bar"><i data-lvl="70"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">AGV · SIMOVE-B</span><span class="cat">Vehículos autónomos Siemens</span></div><div class="bar"><i data-lvl="75"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">MIR Robotic</span><span class="cat">Robots móviles</span></div><div class="bar"><i data-lvl="70"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Microsoft Office</span><span class="cat">Ofimática</span></div><div class="bar"><i data-lvl="85"></i></div></div>
+  </div>
+  <p class="legend reveal">Nivel de dominio basado en años de uso y proyectos realizados.</p>
+
+  <div class="sec-head reveal" style="margin-top:3.5rem">
+    <div class="kicker">Ecosistema</div>
+    <h2 style="font-size:1.5rem">Marcas y plataformas</h2>
+  </div>
+  <div class="tech-cloud reveal">
+    <span class="chip hot">Siemens</span>
+    <span class="chip hot">Schneider Electric</span>
+    <span class="chip hot">Kuka</span>
+    <span class="chip hot">Fanuc</span>
+    <span class="chip hot">Doosan Robotics</span>
+    <span class="chip">Yaskawa</span>
+    <span class="chip">OMRON</span>
+    <span class="chip">ABB</span>
+    <span class="chip">Berghof</span>
+    <span class="chip">MIR</span>
+    <span class="chip">HMI / Pantallas industriales</span>
+    <span class="chip">AGV SIMOVE</span>
+  </div>
+</section>
+
+<!-- ================= FORMACIÓN ================= -->
+<section id="formacion">
+  <div class="sec-head reveal">
+    <div class="kicker">Historial educativo</div>
+    <h2>Formación &amp; Certificaciones</h2>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <div class="icon">🎓</div>
+      <div class="when">2016 — 2018</div>
+      <h3>CFGS Automatización y Robótica Industrial</h3>
+      <p>I.E.S. Universidad Laboral — Ciclo Formativo de Grado Superior.</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">📘</div>
+      <div class="when">2014 — 2016</div>
+      <h3>Bachillerato de Ciencias y Tecnología</h3>
+      <p>I.E.S. Sefarad.</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">🟩</div>
+      <div class="when">Febrero 2025</div>
+      <h3>SCHNEIDER — EcoStruxure Control Expert</h3>
+      <p>CTRLEXPSW1: Programación de autómatas MODICON M340/M580 — Nivel Básico. Certificado oficial de Schneider Electric (24h lectivas).</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">🤖</div>
+      <div class="when">Junio 2024</div>
+      <h3>YASKAWA — Formación Avanzada</h3>
+      <p>5.6 Formación Avanzada — Manipulación. Yaskawa Academy. Programación de aplicaciones robóticas con instrucciones avanzadas (sistema YRC1000/FS100).</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">⚙️</div>
+      <div class="when">Junio 2024</div>
+      <h3>OMRON — TC51 y TC52</h3>
+      <p>Automatización Integrada AI1 y AI2. Cursos oficiales presenciales certificados por OMRON Electronics Iberia (8h cada uno).</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">🚚</div>
+      <div class="when">Junio 2023</div>
+      <h3>SIEMENS — SIMOVE Basic Training</h3>
+      <p>Formación oficial Siemens en sistemas AGV SIMOVE.</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">🦾</div>
+      <div class="when">Julio 2022</div>
+      <h3>FANUC — Operador TPE, Nivel A</h3>
+      <p>Diploma oficial de FANUC Iberia. Programación y operación de robots con consola TPE (16h, Toledo).</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon">🛠️</div>
+      <div class="when">2021</div>
+      <h3>Gabinete Previcaman, S.L.</h3>
+      <p>Instalaciones, reparaciones, montajes, estructuras metálicas, cerrajería y carpintería metálica (20h).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPETENCIAS ================= -->
+<section id="competencias">
+  <div class="sec-head reveal">
+    <div class="kicker">Perfil personal</div>
+    <h2>Competencias</h2>
+  </div>
+  <div class="comp-grid reveal">
+    <span class="comp">Aprendizaje rápido</span>
+    <span class="comp">Resiliencia</span>
+    <span class="comp">Trabajo bajo presión</span>
+    <span class="comp">Trabajo en equipo</span>
+    <span class="comp">Responsabilidad</span>
+    <span class="comp">Puntualidad</span>
+    <span class="comp">Confianza</span>
+    <span class="comp">Proactividad</span>
+    <span class="comp">Adaptabilidad</span>
+  </div>
+
+  <div class="sec-head reveal" style="margin-top:3.5rem">
+    <div class="kicker">Comunicación</div>
+    <h2 style="font-size:1.5rem">Idiomas</h2>
+  </div>
+  <div class="lang-grid reveal">
+    <div class="lang">
+      <h3>🇪🇸 Español</h3>
+      <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
+      <div class="lvl">Nativo</div>
+    </div>
+    <div class="lang">
+      <h3>🇬🇧 Inglés</h3>
+      <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="lvl">Nivel medio</div>
+    </div>
+  </div>
+
+  <div class="sec-head reveal" style="margin-top:3.5rem">
+    <div class="kicker">Extras</div>
+    <h2 style="font-size:1.5rem">Datos de interés</h2>
+  </div>
+  <div class="comp-grid reveal">
+    <span class="comp">Carné de conducir B, AM, A2 y A</span>
+    <span class="comp">Vehículo propio</span>
+    <span class="comp">Moto propia</span>
+    <span class="comp">Disponibilidad inmediata</span>
+    <span class="comp">Recurso Preventivo (60h)</span>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto">
+  <div class="sec-head reveal">
+    <div class="kicker">¿Hablamos?</div>
+    <h2>Contacta Conmigo</h2>
+  </div>
+  <div class="contact-grid">
+    <a class="c-card reveal" href="tel:+34667962361">
+      <div class="icon">📱</div>
+      <div class="lbl">Móvil</div>
+      <div class="val">667 962 361</div>
+    </a>
+    <a class="c-card reveal" href="mailto:victor.medina.serrano@gmail.com">
+      <div class="icon">✉️</div>
+      <div class="lbl">Email</div>
+      <div class="val">victor.medina.serrano@gmail.com</div>
+    </a>
+    <a class="c-card reveal" href="https://linkedin.com/in/victor-medina-serrano-838675167/" target="_blank" rel="noopener">
+      <div class="icon">💼</div>
+      <div class="lbl">LinkedIn</div>
+      <div class="val">victor-medina-serrano</div>
+    </a>
+    <div class="c-card reveal">
+      <div class="icon">📍</div>
+      <div class="lbl">Ubicación</div>
+      <div class="val">Toledo, España</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Víctor Medina Serrano — Técnico en Automatización y Robótica Industrial
+</footer>
+
+<button class="pdf-fab" onclick="descargarPDF()" title="Descargar CV en PDF">📄 Descargar PDF</button>
+
+<!-- ================= CV PDF DEDICADO (solo visible al imprimir) ================= -->
+<div id="cv-print">
+  <aside class="cvp-side">
+    <h1>Víctor<br>Medina <span>Serrano</span></h1>
+    <div class="cvp-role">Técnico en Automatización y Robótica Industrial</div>
+
+    <h2>Contacto</h2>
+    <ul class="cvp-contact">
+      <li><b>📱</b> 667 962 361</li>
+      <li><b>✉</b> victor.medina.serrano@gmail.com</li>
+      <li><b>in</b> linkedin.com/in/victor-medina-serrano</li>
+      <li><b>📍</b> Toledo, España</li>
+    </ul>
+
+    <h2>Software</h2>
+    <div class="cvp-skill"><div class="n">TIA Portal <i>PLC Siemens</i></div><div class="cvp-sbar"><i style="width:95%"></i></div></div>
+    <div class="cvp-skill"><div class="n">STEP 7 <i>PLC Siemens</i></div><div class="cvp-sbar"><i style="width:90%"></i></div></div>
+    <div class="cvp-skill"><div class="n">Robot Doosan <i>Colaborativa</i></div><div class="cvp-sbar"><i style="width:90%"></i></div></div>
+    <div class="cvp-skill"><div class="n">Microsoft Office <i>Ofimática</i></div><div class="cvp-sbar"><i style="width:85%"></i></div></div>
+    <div class="cvp-skill"><div class="n">PL7 <i>PLC Schneider</i></div><div class="cvp-sbar"><i style="width:80%"></i></div></div>
+    <div class="cvp-skill"><div class="n">Fanuc <i>Robótica</i></div><div class="cvp-sbar"><i style="width:80%"></i></div></div>
+    <div class="cvp-skill"><div class="n">YASKAWA <i>Manipulación</i></div><div class="cvp-sbar"><i style="width:75%"></i></div></div>
+    <div class="cvp-skill"><div class="n">AGV · SIMOVE-B <i>Siemens</i></div><div class="cvp-sbar"><i style="width:75%"></i></div></div>
+    <div class="cvp-skill"><div class="n">OMRON <i>Automatización</i></div><div class="cvp-sbar"><i style="width:70%"></i></div></div>
+    <div class="cvp-skill"><div class="n">MIR Robotic <i>Robots móviles</i></div><div class="cvp-sbar"><i style="width:70%"></i></div></div>
+    <div class="cvp-skill"><div class="n">Robot ABB <i>Robótica</i></div><div class="cvp-sbar"><i style="width:50%"></i></div></div>
+    <div class="cvp-skill"><div class="n">RobotStudio <i>Robots ABB</i></div><div class="cvp-sbar"><i style="width:50%"></i></div></div>
+    <div class="cvp-skill"><div class="n">WorkVisual <i>Robots Kuka</i></div><div class="cvp-sbar"><i style="width:40%"></i></div></div>
+
+    <h2>Competencias</h2>
+    <div class="cvp-tags">
+      <span class="cvp-tag">Aprendizaje rápido</span>
+      <span class="cvp-tag">Resiliencia</span>
+      <span class="cvp-tag">Trabajo bajo presión</span>
+      <span class="cvp-tag">Trabajo en equipo</span>
+      <span class="cvp-tag">Responsabilidad</span>
+      <span class="cvp-tag">Puntualidad</span>
+      <span class="cvp-tag">Proactividad</span>
+      <span class="cvp-tag">Adaptabilidad</span>
+    </div>
+
+    <h2>Idiomas</h2>
+    <div class="cvp-lang">Español <i>Nativo</i></div>
+    <div class="cvp-lang">Inglés <i>Medio</i></div>
+
+    <h2>Datos de interés</h2>
+    <ul class="cvp-list">
+      <li>Carné de conducir B, AM, A2 y A</li>
+      <li>Vehículo y moto propios</li>
+      <li>Disponibilidad inmediata</li>
+      <li>Recurso Preventivo (60h)</li>
+    </ul>
+  </aside>
+
+  <main class="cvp-main">
+    <section>
+      <h2>Perfil</h2>
+      <p class="cvp-profile">"Soy una persona comprometida con mi desarrollo profesional y personal. Mi objetivo es abordar soluciones que aporten un valor real a mi empresa." Más de <strong id="cvp-years">8</strong> años de experiencia programando PLC, robots industriales y sistemas AGV.</p>
+    </section>
+
+    <section>
+      <h2>Experiencia Laboral</h2>
+      <div class="cvp-job cur">
+        <div class="d">Febrero 2024 — Actualidad</div>
+        <h3>Técnico de Mejora Continua y Fiabilidad</h3>
+        <div class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+        <ul>
+          <li>Mejora continua y fiabilidad de línea robotizada en cliente ONCE.</li>
+          <li>Optimización de procesos automatizados en entorno productivo real.</li>
+        </ul>
+      </div>
+      <div class="cvp-job">
+        <div class="d">Diciembre 2019 — Enero 2024</div>
+        <h3>Técnico en Automatización y Robótica Industrial</h3>
+        <div class="c">LM GROUP</div>
+        <ul>
+          <li>Creación de proyectos con PLC's Siemens y Berghof.</li>
+          <li>Creación de proyectos con robots Doosan, Kuka y Fanuc.</li>
+        </ul>
+      </div>
+      <div class="cvp-job">
+        <div class="d">Junio 2018 — Diciembre 2019</div>
+        <h3>Automatista</h3>
+        <div class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+        <ul>
+          <li>Creación y modificación de proyectos con PLC's y pantallas Siemens y Schneider.</li>
+        </ul>
+      </div>
+      <div class="cvp-job">
+        <div class="d">Abril 2018 — Junio 2018</div>
+        <h3>Automatista en prácticas</h3>
+        <div class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+        <ul>
+          <li>Creación y modificación de proyectos con PLC's Siemens.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formación &amp; Certificaciones</h2>
+      <div class="cvp-edu">
+        <div class="cvp-edu-item">
+          <div class="d">2016 — 2018</div>
+          <h3>CFGS Automatización y Robótica Industrial</h3>
+          <p>I.E.S. Universidad Laboral</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">2014 — 2016</div>
+          <h3>Bachillerato de Ciencias y Tecnología</h3>
+          <p>I.E.S. Sefarad</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">Febrero 2025</div>
+          <h3>Schneider — EcoStruxure Control Expert</h3>
+          <p>CTRLEXPSW1: Autómatas MODICON M340/M580, Nivel Básico (24h)</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">Junio 2024</div>
+          <h3>Yaskawa Academy — Formación Avanzada</h3>
+          <p>5.6 Manipulación · Sistema YRC1000/FS100</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">Junio 2024</div>
+          <h3>OMRON — TC51 y TC52</h3>
+          <p>Automatización Integrada AI1 y AI2 (8h cada uno)</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">Junio 2023</div>
+          <h3>Siemens — SIMOVE Basic Training</h3>
+          <p>Sistemas AGV SIMOVE · SITRAIN Digital Industry Academy</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">Julio 2022</div>
+          <h3>FANUC — Operador TPE, Nivel A</h3>
+          <p>Diploma oficial FANUC Iberia (16h)</p>
+        </div>
+        <div class="cvp-edu-item">
+          <div class="d">2021</div>
+          <h3>Gabinete Previcaman, S.L.</h3>
+          <p>Instalaciones, montajes y estructuras metálicas (20h)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  // ===== Generación de PDF (maqueta CV dedicada → "Guardar como PDF") =====
+  function descargarPDF(){
+    const prevTitle = document.title;
+    document.title = 'CV - Victor Medina Serrano';
+    window.print();
+    document.title = prevTitle;
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Años de experiencia calculados automáticamente desde el inicio (abril 2018)
+  const careerStart = new Date(2018, 3, 1); // Abril 2018
+  const yearsExp = Math.floor((Date.now() - careerStart) / (365.25 * 24 * 3600 * 1000));
+  document.getElementById('years-counter').dataset.count = yearsExp;
+  document.getElementById('years-inline').textContent = yearsExp;
+  document.getElementById('cvp-years').textContent = yearsExp;
+
+  // Contador de softwares calculado automáticamente según las tarjetas de la sección
+  document.getElementById('software-counter').dataset.count =
+    document.querySelectorAll('#software .skill').length;
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // Animate skill bars when their card appears
+        e.target.querySelectorAll('.bar i').forEach(b => {
+          b.style.width = b.dataset.lvl + '%';
+        });
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Animated counters in hero
+  const counters = document.querySelectorAll('.num[data-count]');
+  const io2 = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count;
+      let cur = 0;
+      const step = () => {
+        cur += Math.max(1, Math.ceil(target / 40));
+        if (cur >= target) { el.textContent = '+' + target; }
+        else { el.textContent = cur; requestAnimationFrame(step); }
+      };
+      step();
+      io2.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => io2.observe(c));
+</script>
+</body>
+</html>

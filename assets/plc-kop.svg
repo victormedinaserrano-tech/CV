@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" fill="none">
+  <title>Esquema ilustrativo de programación PLC en KOP</title>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#30455b" stroke-opacity=".3"/>
+    </pattern>
+  </defs>
+  <path fill="#101b29" d="M0 0H1440V1000H0Z"/>
+  <path fill="url(#grid)" d="M0 64H1440V1000H0Z"/>
+  <path fill="#1b2c40" d="M0 0H1440V64H0Z"/>
+  <g font-family="Consolas,monospace" font-size="18" fill="#9eb4c9">
+    <text x="44" y="40">PLC / OB1 / MAIN</text>
+    <text x="1170" y="40">LADDER · KOP</text>
+    <text x="44" y="109">NETWORK 1  // Memoria de marcha</text>
+    <text x="44" y="379">NETWORK 2  // Orden de motor</text>
+    <text x="44" y="619">NETWORK 3  // Indicador de marcha</text>
+    <text x="44" y="859">NETWORK 4  // Indicador de paro</text>
+  </g>
+  <g stroke="#61859e" stroke-width="3">
+    <path d="M80 140V320M1360 140V320M80 410V560M1360 410V560M80 650V800M1360 650V800M80 890V970M1360 890V970"/>
+  </g>
+  <g stroke="#48d6bd" stroke-width="3">
+    <path d="M80 210H240M264 210H460M484 210H700M724 210H1170M1230 210H1360"/>
+    <path d="M240 188V232M264 188V232M460 188V232M484 188V232M700 188V232M724 188V232"/>
+    <path d="M116 210V290H460M484 290H560V210M460 268V312M484 268V312"/>
+    <path d="M1188 188Q1164 210 1188 232M1212 188Q1236 210 1212 232"/>
+    <path d="M80 480H460M460 458V502M484 458V502M484 480H1170M1230 480H1360"/>
+    <path d="M1188 458Q1164 480 1188 502M1212 458Q1236 480 1212 502"/>
+    <path d="M80 720H460M460 698V742M484 698V742M484 720H1170M1230 720H1360"/>
+    <path d="M1188 698Q1164 720 1188 742M1212 698Q1236 720 1212 742"/>
+  </g>
+  <g stroke="#8ba3bb" stroke-width="3">
+    <path d="M80 930H460M460 908V952M484 908V952M455 952 489 908M484 930H1170M1230 930H1360"/>
+    <path d="M1188 908Q1164 930 1188 952M1212 908Q1236 930 1212 952"/>
+  </g>
+  <g font-family="Consolas,monospace" font-size="20" fill="#d2e7f2" text-anchor="middle">
+    <text x="252" y="166">"Habilitacion"</text>
+    <text x="472" y="166">"Pulsador_Marcha"</text>
+    <text x="712" y="166">"Permiso_Proceso"</text>
+    <text x="1200" y="166">"Mem_Marcha"</text>
+    <text x="472" y="258">"Mem_Marcha"</text>
+    <text x="472" y="436">"Mem_Marcha"</text>
+    <text x="1200" y="436">"Orden_Motor"</text>
+    <text x="472" y="676">"Orden_Motor"</text>
+    <text x="1200" y="676">"Piloto_Marcha"</text>
+    <text x="472" y="886">"Mem_Marcha"</text>
+    <text x="1200" y="886">"Piloto_Paro"</text>
+  </g>
+  <g font-family="Consolas,monospace" font-size="15" fill="#6893ad" text-anchor="middle">
+    <text x="252" y="246">%I0.0</text>
+    <text x="472" y="246">%I0.1</text>
+    <text x="712" y="246">%M0.1</text>
+    <text x="1200" y="246">%M0.0</text>
+    <text x="472" y="518">%M0.0</text>
+    <text x="1200" y="518">%Q0.0</text>
+    <text x="472" y="758">%Q0.0</text>
+    <text x="1200" y="758">%Q0.1</text>
+  </g>
+</svg>
