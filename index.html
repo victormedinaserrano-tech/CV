@@ -228,8 +228,9 @@
   /* ====== CONTACTO ====== */
   .contact-grid{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:1.2rem;max-width:1100px;
+    gap:1.2rem;max-width:1100px;align-items:center;
   }
+  .contact-grid > .btn{justify-self:start}
   .c-card{
     background:var(--card);border:1px solid var(--border);border-radius:14px;
     padding:1.5rem;text-align:center;transition:border-color .25s, transform .25s;
@@ -387,7 +388,7 @@
   <p class="subtitle">Técnico en Automatización y Robótica Industrial con más de <strong><span id="years-inline">8</span> años de experiencia</strong> programando PLC, robots industriales y sistemas AGV.</p>
   <div class="quote">"Soy una persona comprometida con mi desarrollo profesional y personal. Mi objetivo es abordar soluciones que aporten un valor real a mi empresa."</div>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="#contacto">📞 Contactar</a>
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/victor-medina-serrano-838675167/" target="_blank" rel="noopener noreferrer">Contactar por LinkedIn</a>
     <a class="btn btn-ghost" href="#experiencia">Ver experiencia ↓</a>
     <a class="btn btn-ghost" href="#" onclick="descargarPDF(); return false;">📄 Descargar PDF</a>
   </div>
@@ -601,21 +602,7 @@
     <h2>Contacta Conmigo</h2>
   </div>
   <div class="contact-grid">
-    <a class="c-card reveal" href="tel:+34667962361">
-      <div class="icon">📱</div>
-      <div class="lbl">Móvil</div>
-      <div class="val">667 962 361</div>
-    </a>
-    <a class="c-card reveal" href="mailto:victor.medina.serrano@gmail.com">
-      <div class="icon">✉️</div>
-      <div class="lbl">Email</div>
-      <div class="val">victor.medina.serrano@gmail.com</div>
-    </a>
-    <a class="c-card reveal" href="https://linkedin.com/in/victor-medina-serrano-838675167/" target="_blank" rel="noopener">
-      <div class="icon">💼</div>
-      <div class="lbl">LinkedIn</div>
-      <div class="val">victor-medina-serrano</div>
-    </a>
+    <a class="btn btn-primary reveal" href="https://www.linkedin.com/in/victor-medina-serrano-838675167/" target="_blank" rel="noopener noreferrer">Contactar por LinkedIn</a>
     <div class="c-card reveal">
       <div class="icon">📍</div>
       <div class="lbl">Ubicación</div>
@@ -638,9 +625,7 @@
 
     <h2>Contacto</h2>
     <ul class="cvp-contact">
-      <li><b>📱</b> 667 962 361</li>
-      <li><b>✉</b> victor.medina.serrano@gmail.com</li>
-      <li><b>in</b> linkedin.com/in/victor-medina-serrano</li>
+      <li><b>in</b> <a href="https://www.linkedin.com/in/victor-medina-serrano-838675167/" style="color:inherit">Contactar por LinkedIn</a></li>
       <li><b>📍</b> Toledo, España</li>
     </ul>
 
