@@ -267,103 +267,267 @@
   }
   .pdf-fab:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(255,122,24,.6)}
 
+  /* ====== INTERFAZ INSPIRADA EN macOS ====== */
+  :root{
+    --bg:#f5f5f7;
+    --bg-2:#fbfbfd;
+    --card:rgba(255,255,255,.78);
+    --card-2:#fff;
+    --border:rgba(29,29,31,.09);
+    --accent:#0a84ff;
+    --accent-2:#6e6eff;
+    --text:#1d1d1f;
+    --muted:#6e6e73;
+    --ok:#34c759;
+  }
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3,.brand{font-family:inherit;letter-spacing:-.035em}
+  a{color:var(--accent)}
+  nav{
+    top:.8rem;left:50%;right:auto;transform:translateX(-50%);
+    width:min(1200px,calc(100% - 2rem));padding:.65rem 1rem;
+    background:rgba(250,250,252,.78);backdrop-filter:blur(24px) saturate(180%);
+    -webkit-backdrop-filter:blur(24px) saturate(180%);
+    border:1px solid rgba(255,255,255,.75);border-radius:999px;
+    box-shadow:0 8px 30px rgba(20,25,40,.12);
+  }
+  .brand{font-size:1.05rem;font-weight:700;color:var(--text)}
+  .brand span{color:var(--accent)}
+  .nav-links{gap:clamp(.65rem,2vw,1.4rem)}
+  .nav-links a{color:#424245;font-size:.84rem;transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+  header{
+    min-height:94svh;padding:9rem clamp(1.25rem,9vw,8rem) 4rem;
+    background:linear-gradient(90deg,rgba(9,17,31,.9) 0%,rgba(9,17,31,.69) 48%,rgba(9,17,31,.24) 100%),url('assets/automatizacion.jpg') center / cover no-repeat;
+  }
+  header > :not(.grid-overlay){max-width:980px}
+  .grid-overlay{
+    background:
+      radial-gradient(ellipse at 76% 32%,rgba(10,132,255,.22),transparent 38%),
+      radial-gradient(ellipse at 22% 78%,rgba(110,110,255,.16),transparent 42%);
+    mask-image:none;-webkit-mask-image:none;
+  }
+  .tagline{
+    gap:.65rem;color:#b9dcff;font-size:.78rem;
+    letter-spacing:1.7px;margin-bottom:1.3rem;
+  }
+  .tagline::before{width:24px;height:2px;background:#64b5ff;border-radius:2px}
+  header h1{
+    font-size:clamp(3.2rem,9vw,7.2rem);font-weight:700;
+    line-height:.98;letter-spacing:-.075em;text-transform:none;color:#fff;
+  }
+  header h1 em{color:#9bcfff}
+  .subtitle{
+    color:rgba(255,255,255,.82);font-size:clamp(1.05rem,2vw,1.35rem);
+    max-width:680px;margin-top:1.35rem;
+  }
+  .quote{
+    max-width:620px;margin-top:1.6rem;padding:1rem 1.25rem;
+    border:1px solid rgba(255,255,255,.2);border-left:1px solid rgba(255,255,255,.2);
+    border-radius:18px;background:rgba(255,255,255,.11);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    color:rgba(255,255,255,.88);
+  }
+  .hero-cta{gap:.7rem;margin-top:1.8rem}
+  .btn{
+    padding:.78rem 1.25rem;border-radius:999px;
+    font-size:.9rem;transition:transform .2s,background .2s,box-shadow .2s;
+  }
+  .btn-primary{
+    background:#fff;color:#161616;box-shadow:0 6px 24px rgba(0,0,0,.2);
+  }
+  .btn-primary:hover{background:#eaf4ff}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,.3);color:#fff;
+    background:rgba(255,255,255,.1);backdrop-filter:blur(12px);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.2)}
+  .hero-stats{
+    gap:0;margin-top:2.8rem;padding:1rem 1.3rem;width:max-content;max-width:100%;
+    border:1px solid rgba(255,255,255,.18);border-radius:20px;
+    background:rgba(255,255,255,.1);backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+  .stat{padding:0 1.3rem}
+  .stat:first-child{padding-left:0}
+  .stat + .stat{border-left:1px solid rgba(255,255,255,.2)}
+  .stat .num{font-family:inherit;font-size:2rem;color:#a8d5ff;letter-spacing:-.06em}
+  .stat .lbl{color:rgba(255,255,255,.72);font-size:.72rem;letter-spacing:.7px}
+  section{padding:6rem clamp(1.25rem,8vw,7rem)}
+  body > section,body > section:nth-of-type(even),body > #software{
+    background-image:none;background-color:var(--bg);
+  }
+  body > section:nth-of-type(even){background-color:var(--bg-2)}
+  .sec-head{margin-bottom:2.5rem}
+  .sec-head .kicker{
+    color:var(--accent);font-size:.75rem;letter-spacing:1.5px;
+  }
+  .sec-head h2{
+    font-size:clamp(2rem,4vw,3rem);font-weight:700;
+    letter-spacing:-.06em;text-transform:none;margin-top:.25rem;
+  }
+  .sec-head h2::after{
+    width:42px;height:4px;margin-top:.75rem;
+    background:var(--accent);border-radius:99px;
+  }
+  .timeline{max-width:900px}
+  .timeline::before{background:linear-gradient(var(--accent),rgba(10,132,255,.12))}
+  .t-item{padding-bottom:2.4rem}
+  .t-item::before{
+    background:var(--bg);border-color:var(--accent);
+    box-shadow:0 0 0 5px rgba(10,132,255,.1);
+  }
+  .t-item.current::before{background:var(--accent)}
+  .t-date{
+    color:#0874df;background:rgba(10,132,255,.08);
+    border:1px solid rgba(10,132,255,.16);letter-spacing:.45px;
+  }
+  .t-item.current .t-date{color:#fff;background:var(--accent)}
+  .t-item h3{font-size:1.25rem;letter-spacing:-.025em}
+  .t-item .company{color:#6060cb}
+  .t-item li{color:var(--muted)}
+  .t-item li::before{content:"•";color:var(--accent)}
+  .skills-grid{gap:1rem;max-width:1180px}
+  .skill,.card,.lang,.c-card{
+    background:var(--card);border:1px solid rgba(255,255,255,.9);
+    box-shadow:0 8px 28px rgba(28,38,64,.055);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  }
+  .skill{border-radius:18px;padding:1rem 1.15rem}
+  .skill .cat{letter-spacing:.55px}
+  .bar{background:rgba(29,29,31,.08);height:6px}
+  .bar i{
+    background:linear-gradient(90deg,#0a84ff,#64d2ff);
+    box-shadow:none;
+  }
+  .legend{color:var(--muted)}
+  .chip{
+    background:rgba(255,255,255,.72);border:1px solid var(--border);
+    color:#424245;border-radius:999px;
+  }
+  .chip:hover{border-color:rgba(10,132,255,.4);color:var(--accent)}
+  .chip.hot{border-color:rgba(10,132,255,.2);color:#0874df;background:rgba(10,132,255,.06)}
+  .cards{gap:1rem;max-width:1180px}
+  .card{
+    border-radius:22px;padding:1.5rem;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .card:hover{
+    transform:translateY(-4px);border-color:rgba(10,132,255,.2);
+    box-shadow:0 16px 36px rgba(28,38,64,.1);
+  }
+  .card .icon{font-size:1.55rem}
+  .card .when{color:var(--accent);letter-spacing:.6px}
+  .card p{color:var(--muted)}
+  .comp{
+    background:rgba(255,255,255,.72);border:1px solid var(--border);
+    border-radius:999px;padding:.65rem 1rem;
+  }
+  .comp::before{color:var(--accent)}
+  .lang{border-radius:20px}
+  .dot{background:#e8e8ed;border-color:#e8e8ed}
+  .dot.on{background:var(--accent);border-color:var(--accent);box-shadow:none}
+  .lang .lvl{color:var(--muted)}
+  .c-card{border-radius:22px}
+  .c-card:hover{border-color:rgba(10,132,255,.3)}
+  footer{
+    color:#86868b;border-top:1px solid var(--border);background:var(--bg-2);
+  }
+  .pdf-fab{
+    right:1.25rem;bottom:1.25rem;padding:.8rem 1.2rem;
+    background:rgba(250,250,252,.84);color:#1d1d1f;
+    border:1px solid rgba(255,255,255,.9);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    box-shadow:0 8px 28px rgba(20,25,40,.18);
+  }
+  .pdf-fab:hover{background:#fff;box-shadow:0 12px 32px rgba(20,25,40,.22)}
+  @media(max-width:640px){
+    nav{top:.5rem;width:calc(100% - 1rem);padding:.6rem .75rem}
+    .nav-links{
+      display:flex;flex:1;flex-wrap:nowrap;min-width:0;justify-content:flex-start;gap:.9rem;
+      margin-left:1rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none;
+    }
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{font-size:.74rem}
+    header{min-height:90svh;padding:8rem 1.25rem 3rem;background-position:center,65% center}
+    header h1{font-size:clamp(3rem,15vw,5rem)}
+    .hero-stats{width:100%;justify-content:space-between;padding:.9rem .65rem}
+    .stat{padding:0 .65rem}
+    .stat .num{font-size:1.65rem}
+    .stat .lbl{font-size:.62rem;letter-spacing:.2px}
+    section{padding:4.5rem 1.25rem}
+    .skills-grid{grid-template-columns:1fr}
+    .skill .row{align-items:flex-start}
+    .skill .cat{max-width:52%}
+    .pdf-fab{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+    .reveal{opacity:1;transform:none}
+  }
+
   /* ====== CV PDF DEDICADO (oculto en pantalla) ====== */
   #cv-print{display:none}
 
   @media print{
-    @page{size:A4;margin:0}
-    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    @page{size:A4;margin:14mm 16mm}
     body > *:not(#cv-print){display:none !important}
-    body{background:#fff}
+    body{background:#fff;color:#111}
     #cv-print{
-      display:grid;
-      grid-template-columns:64mm 1fr;
-      width:210mm;min-height:296mm;
-      font-family:'Inter',sans-serif;
-      font-size:9pt;line-height:1.45;color:#2a3342;
+      display:block;width:auto;min-height:0;margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:10pt;line-height:1.35;color:#111;
     }
-    /* Neutralizar estilos de la web dentro del CV impreso */
-    #cv-print section{background:transparent !important;padding:0 !important;position:static}
-    #cv-print h1,#cv-print h2,#cv-print h3{text-transform:none}
-
-    /* --- Barra lateral --- */
-    .cvp-side{
-      background:#122033;color:#dce5f0;
-      padding:7mm 6.5mm 5mm;line-height:1.35;
+    #cv-print *{box-shadow:none !important;text-shadow:none !important}
+    #cv-print h1,#cv-print h2,#cv-print h3{
+      font-family:Arial,Helvetica,sans-serif;color:#111;
+      letter-spacing:0;text-transform:none;
     }
-    .cvp-side h1{
-      font-family:'Rajdhani';font-size:19pt;line-height:1.05;
-      color:#fff;text-transform:uppercase !important;letter-spacing:1px;
+    #cv-print h1{font-size:20pt;line-height:1.1;margin:0 0 1mm}
+    #cv-print h2{
+      font-size:12pt;margin:4mm 0 1.5mm;padding:0 0 1mm;
+      border-bottom:1px solid #555;break-after:avoid-page;
     }
-    .cvp-side h1 span{color:#00d4ff}
-    .cvp-role{
-      margin-top:2mm;font-size:8.5pt;font-weight:600;letter-spacing:1.5px;
-      text-transform:uppercase;color:#00d4ff;
+    #cv-print h2::after{content:none}
+    #cv-print h3{font-size:10pt;margin:2mm 0 .5mm;break-after:avoid-page}
+    #cv-print p{margin:0 0 1.5mm}
+    #cv-print ul{margin:0 0 2mm;padding-left:5mm}
+    #cv-print li{margin-bottom:.6mm}
+    #cv-print a{color:#111;text-decoration:none}
+    .cvp-header{
+      display:block;min-height:0;padding:0 0 2mm;margin-bottom:3mm;
+      background:none !important;color:#111;border-bottom:1px solid #555;
     }
-    .cvp-side h2{
-      font-family:'Rajdhani';font-size:10.5pt;text-transform:uppercase !important;
-      letter-spacing:1.5px;color:#fff;margin:4mm 0 1.8mm;
-      padding-bottom:1mm;border-bottom:1.5px solid #00d4ff;
-    }
-    .cvp-contact{list-style:none;font-size:8pt}
-    .cvp-contact li{margin-bottom:1.2mm;display:flex;gap:1.8mm;align-items:baseline;word-break:break-all}
-    .cvp-contact b{color:#00d4ff;font-weight:600;flex-shrink:0}
-    .cvp-skill{margin-bottom:1.6mm}
-    .cvp-skill .n{display:flex;justify-content:space-between;font-size:8pt;margin-bottom:.6mm}
-    .cvp-skill .n i{font-style:normal;color:#8fa3bd;font-size:7pt}
-    .cvp-sbar{height:1.6mm;background:#24354d;border-radius:2mm}
-    .cvp-sbar i{display:block;height:100%;background:#00d4ff;border-radius:2mm}
-    .cvp-tags{display:flex;flex-wrap:wrap;gap:1.2mm}
-    .cvp-tag{
-      font-size:7pt;padding:.7mm 2mm;border-radius:3mm;
-      border:.5pt solid #3b506e;color:#c3d0e2;background:transparent;
-    }
-    .cvp-lang{font-size:8pt;margin-bottom:1.2mm;display:flex;justify-content:space-between}
-    .cvp-lang i{font-style:normal;color:#8fa3bd}
-    .cvp-list{list-style:none;font-size:8pt}
-    .cvp-list li{margin-bottom:.9mm;padding-left:3.5mm;position:relative}
-    .cvp-list li::before{content:"▸";position:absolute;left:0;color:#00d4ff}
-
-    /* --- Columna principal --- */
-    .cvp-main{padding:8mm 8mm 6mm;background:#fff}
-    .cvp-main h2{
-      font-family:'Rajdhani';font-size:13pt;text-transform:uppercase !important;
-      letter-spacing:1.5px;color:#122033;margin:0 0 2.5mm;
-      display:flex;align-items:center;gap:2.5mm;
-    }
-    .cvp-main h2::after{content:"";flex:1;height:.6mm;background:linear-gradient(90deg,#00b4dd,transparent)}
-    .cvp-main section{margin-bottom:4.5mm !important;break-inside:avoid-page}
-    .cvp-profile{
-      font-size:9pt;color:#4a5568;font-style:italic;
-      padding:3mm 4mm;background:#f2f7fb;border-left:1mm solid #ff7a18;border-radius:0 2mm 2mm 0;
-    }
-    .cvp-job{margin-bottom:3.5mm;padding-left:5mm;position:relative;break-inside:avoid}
-    .cvp-job::before{
-      content:"";position:absolute;left:0;top:1.4mm;width:2.4mm;height:2.4mm;
-      border-radius:50%;background:#fff;border:.6mm solid #00b4dd;
-    }
-    .cvp-job.cur::before{background:#00b4dd}
-    .cvp-job::after{
-      content:"";position:absolute;left:1mm;top:5mm;bottom:-3.5mm;width:.4mm;background:#d4e2ee;
-    }
-    .cvp-job:last-child::after{display:none}
-    .cvp-job .d{
-      font-size:7.5pt;font-weight:700;color:#0090b8;
-      text-transform:uppercase;letter-spacing:.8px;
-    }
-    .cvp-job h3{font-family:'Inter';font-size:10pt;font-weight:700;color:#1a2433}
-    .cvp-job .c{font-size:8.5pt;font-weight:600;color:#d96a10;margin-bottom:1mm}
-    .cvp-job ul{list-style:none;font-size:8.5pt;color:#4a5568}
-    .cvp-job ul li{padding-left:3.5mm;position:relative;margin-bottom:.6mm}
-    .cvp-job ul li::before{content:"▸";position:absolute;left:0;color:#00b4dd}
-
-    .cvp-edu{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
-    .cvp-edu-item{
-      border:.5pt solid #d4e2ee;border-radius:2mm;padding:2.5mm 3mm;break-inside:avoid;
-    }
-    .cvp-edu-item .d{font-size:7pt;font-weight:700;color:#0090b8;text-transform:uppercase;letter-spacing:.8px}
-    .cvp-edu-item h3{font-size:8.5pt;font-weight:700;color:#1a2433;line-height:1.3}
-    .cvp-edu-item p{font-size:7.5pt;color:#4a5568;margin-top:.6mm}
+    .cvp-role{font-size:11pt;font-weight:700;margin-bottom:1mm}
+    .cvp-contact-line{font-size:9pt;overflow-wrap:anywhere}
+    .cvp-main{padding:0;background:#fff}
+    .cvp-main section{margin:0 0 2mm;padding:0;background:transparent !important;position:static;break-inside:auto}
+    .cvp-profile{font-style:normal}
+    .cvp-job{margin:0 0 2.5mm;padding:0;position:static;break-inside:avoid}
+    .cvp-job::before,.cvp-job::after{content:none}
+    .cvp-job .d{font-size:9pt;font-weight:700}
+    .cvp-job .c{font-size:10pt;font-weight:600;margin-bottom:.5mm}
+    .cvp-job ul{list-style:disc;font-size:9.5pt}
+    .cvp-edu{display:block}
+    .cvp-edu-item{padding:0;margin:0 0 2mm;border:0;break-inside:avoid}
+    .cvp-edu-item .d{font-size:9pt;font-weight:700}
+    .cvp-edu-item h3{font-size:10pt;margin:.5mm 0}
+    .cvp-edu-item p{font-size:9.5pt}
+    .cvp-skill{margin-bottom:1mm}
+    .cvp-skill .n{display:block;font-size:9.5pt}
+    .cvp-skill .n i{font-style:normal}
+    .cvp-sbar{display:none}
+    .cvp-tags{display:block}
+    .cvp-tag{display:inline;padding:0;border:0;font-size:9.5pt}
+    .cvp-tag:not(:last-child)::after{content:", "}
+    .cvp-lang{display:block;font-size:9.5pt}
+    .cvp-lang i{font-style:normal}
+    .cvp-list{list-style:disc;font-size:9.5pt}
   }
 </style>
 </head>
@@ -465,6 +629,8 @@
     <div class="skill reveal"><div class="row"><span class="name">OMRON</span><span class="cat">Automatización integrada</span></div><div class="bar"><i data-lvl="70"></i></div></div>
     <div class="skill reveal"><div class="row"><span class="name">AGV · SIMOVE-B</span><span class="cat">Vehículos autónomos Siemens</span></div><div class="bar"><i data-lvl="75"></i></div></div>
     <div class="skill reveal"><div class="row"><span class="name">MIR Robotic</span><span class="cat">Robots móviles</span></div><div class="bar"><i data-lvl="70"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Power BI</span><span class="cat">Nivel medio-alto</span></div><div class="bar"><i data-lvl="80"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Power Automate</span><span class="cat">Nivel medio</span></div><div class="bar"><i data-lvl="60"></i></div></div>
     <div class="skill reveal"><div class="row"><span class="name">Microsoft Office</span><span class="cat">Ofimática</span></div><div class="bar"><i data-lvl="85"></i></div></div>
   </div>
   <p class="legend reveal">Nivel de dominio basado en años de uso y proyectos realizados.</p>
@@ -625,94 +791,60 @@
 
 <!-- ================= CV PDF DEDICADO (solo visible al imprimir) ================= -->
 <div id="cv-print">
-  <aside class="cvp-side">
-    <h1>Víctor<br>Medina <span>Serrano</span></h1>
-    <div class="cvp-role">Técnico en Automatización y Robótica Industrial</div>
-
-    <h2>Contacto</h2>
-    <ul class="cvp-contact">
-      <li><b>in</b> <a href="https://www.linkedin.com/in/victor-medina-serrano-838675167/" style="color:inherit">Contactar por LinkedIn</a></li>
-      <li><b>📍</b> Toledo, España</li>
-    </ul>
-
-    <h2>Software</h2>
-    <div class="cvp-skill"><div class="n">TIA Portal <i>PLC Siemens</i></div><div class="cvp-sbar"><i style="width:95%"></i></div></div>
-    <div class="cvp-skill"><div class="n">STEP 7 <i>PLC Siemens</i></div><div class="cvp-sbar"><i style="width:90%"></i></div></div>
-    <div class="cvp-skill"><div class="n">Robot Doosan <i>Colaborativa</i></div><div class="cvp-sbar"><i style="width:90%"></i></div></div>
-    <div class="cvp-skill"><div class="n">Microsoft Office <i>Ofimática</i></div><div class="cvp-sbar"><i style="width:85%"></i></div></div>
-    <div class="cvp-skill"><div class="n">PL7 <i>PLC Schneider</i></div><div class="cvp-sbar"><i style="width:80%"></i></div></div>
-    <div class="cvp-skill"><div class="n">Fanuc <i>Robótica</i></div><div class="cvp-sbar"><i style="width:80%"></i></div></div>
-    <div class="cvp-skill"><div class="n">YASKAWA <i>Manipulación</i></div><div class="cvp-sbar"><i style="width:75%"></i></div></div>
-    <div class="cvp-skill"><div class="n">AGV · SIMOVE-B <i>Siemens</i></div><div class="cvp-sbar"><i style="width:75%"></i></div></div>
-    <div class="cvp-skill"><div class="n">OMRON <i>Automatización</i></div><div class="cvp-sbar"><i style="width:70%"></i></div></div>
-    <div class="cvp-skill"><div class="n">MIR Robotic <i>Robots móviles</i></div><div class="cvp-sbar"><i style="width:70%"></i></div></div>
-    <div class="cvp-skill"><div class="n">Robot ABB <i>Robótica</i></div><div class="cvp-sbar"><i style="width:50%"></i></div></div>
-    <div class="cvp-skill"><div class="n">RobotStudio <i>Robots ABB</i></div><div class="cvp-sbar"><i style="width:50%"></i></div></div>
-    <div class="cvp-skill"><div class="n">WorkVisual <i>Robots Kuka</i></div><div class="cvp-sbar"><i style="width:40%"></i></div></div>
-
-    <h2>Competencias</h2>
-    <div class="cvp-tags">
-      <span class="cvp-tag">Aprendizaje rápido</span>
-      <span class="cvp-tag">Resiliencia</span>
-      <span class="cvp-tag">Trabajo bajo presión</span>
-      <span class="cvp-tag">Trabajo en equipo</span>
-      <span class="cvp-tag">Responsabilidad</span>
-      <span class="cvp-tag">Puntualidad</span>
-      <span class="cvp-tag">Proactividad</span>
-      <span class="cvp-tag">Adaptabilidad</span>
-    </div>
-
-    <h2>Idiomas</h2>
-    <div class="cvp-lang">Español <i>Nativo</i></div>
-    <div class="cvp-lang">Inglés <i>Medio</i></div>
-
-    <h2>Datos de interés</h2>
-    <ul class="cvp-list">
-      <li>Carné de conducir B, AM, A2 y A</li>
-      <li>Vehículo y moto propios</li>
-      <li>Disponibilidad inmediata</li>
-      <li>Recurso Preventivo (60h)</li>
-    </ul>
-  </aside>
+  <header class="cvp-header">
+    <h1>Víctor Medina Serrano</h1>
+    <p class="cvp-role">Técnico en Automatización y Robótica Industrial</p>
+    <p class="cvp-contact-line">Toledo, España | LinkedIn: https://www.linkedin.com/in/victor-medina-serrano-838675167/</p>
+  </header>
 
   <main class="cvp-main">
     <section>
-      <h2>Perfil</h2>
-      <p class="cvp-profile">"Soy una persona comprometida con mi desarrollo profesional y personal. Mi objetivo es abordar soluciones que aporten un valor real a mi empresa." Más de <strong id="cvp-years">8</strong> años de experiencia programando PLC, robots industriales y sistemas AGV.</p>
+      <h2>Perfil profesional</h2>
+      <p class="cvp-profile">Técnico en Automatización y Robótica Industrial con más de <strong id="cvp-years">8</strong> años de experiencia en programación de PLC, robots industriales y sistemas AGV. Experiencia en mejora continua, fiabilidad y optimización de procesos en entornos productivos.</p>
     </section>
 
     <section>
-      <h2>Experiencia Laboral</h2>
+      <h2>Competencias técnicas</h2>
+      <ul>
+        <li><strong>PLC y automatización:</strong> Siemens TIA Portal y STEP 7; Schneider Electric PL7 y EcoStruxure Control Expert; Berghof; OMRON.</li>
+        <li><strong>Robótica industrial:</strong> Doosan Robotics, KUKA WorkVisual, Fanuc, ABB RobotStudio y Yaskawa.</li>
+        <li><strong>Robots móviles y AGV:</strong> MIR Robotic y Siemens SIMOVE-B.</li>
+        <li><strong>Software:</strong> Power BI (nivel medio-alto), Power Automate (nivel medio) y Microsoft Office.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experiencia profesional</h2>
       <div class="cvp-job cur">
-        <div class="d">Febrero 2024 — Actualidad</div>
+        <p class="d">Febrero 2024 - Actualidad</p>
         <h3>Técnico de Mejora Continua y Fiabilidad</h3>
-        <div class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</p>
         <ul>
           <li>Mejora continua y fiabilidad de línea robotizada en cliente ONCE.</li>
           <li>Optimización de procesos automatizados en entorno productivo real.</li>
         </ul>
       </div>
       <div class="cvp-job">
-        <div class="d">Diciembre 2019 — Enero 2024</div>
+        <p class="d">Diciembre 2019 - Enero 2024</p>
         <h3>Técnico en Automatización y Robótica Industrial</h3>
-        <div class="c">LM GROUP</div>
+        <p class="c">LM GROUP</p>
         <ul>
           <li>Creación de proyectos con PLC's Siemens y Berghof.</li>
           <li>Creación de proyectos con robots Doosan, Kuka y Fanuc.</li>
         </ul>
       </div>
       <div class="cvp-job">
-        <div class="d">Junio 2018 — Diciembre 2019</div>
+        <p class="d">Junio 2018 - Diciembre 2019</p>
         <h3>Automatista</h3>
-        <div class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</p>
         <ul>
           <li>Creación y modificación de proyectos con PLC's y pantallas Siemens y Schneider.</li>
         </ul>
       </div>
       <div class="cvp-job">
-        <div class="d">Abril 2018 — Junio 2018</div>
+        <p class="d">Abril 2018 - Junio 2018</p>
         <h3>Automatista en prácticas</h3>
-        <div class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</p>
         <ul>
           <li>Creación y modificación de proyectos con PLC's Siemens.</li>
         </ul>
@@ -720,54 +852,77 @@
     </section>
 
     <section>
-      <h2>Formación &amp; Certificaciones</h2>
+      <h2>Formación y certificaciones</h2>
       <div class="cvp-edu">
         <div class="cvp-edu-item">
-          <div class="d">2016 — 2018</div>
+          <p class="d">2016 - 2018</p>
           <h3>CFGS Automatización y Robótica Industrial</h3>
           <p>I.E.S. Universidad Laboral</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">2014 — 2016</div>
+          <p class="d">2014 - 2016</p>
           <h3>Bachillerato de Ciencias y Tecnología</h3>
           <p>I.E.S. Sefarad</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">Octubre 2025</div>
+          <p class="d">Octubre 2025</p>
           <h3>Nivel Básico de Prevención en la Construcción</h3>
-          <p>Formación semipresencial homologada por la Fundación Laboral de la Construcción (60h).</p>
+          <p>Formación semipresencial de 60 horas homologada por la Fundación Laboral de la Construcción e impartida por Vitaly Health Services, S.L.</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">Febrero 2025</div>
+          <p class="d">Febrero 2025</p>
           <h3>Schneider — EcoStruxure Control Expert</h3>
-          <p>CTRLEXPSW1: Autómatas MODICON M340/M580, Nivel Básico (24h)</p>
+          <p>Programación de autómatas MODICON M340/M580, nivel básico. Certificado oficial Schneider Electric (24 horas).</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">Junio 2024</div>
+          <p class="d">Junio 2024</p>
           <h3>Yaskawa Academy — Formación Avanzada</h3>
-          <p>5.6 Manipulación · Sistema YRC1000/FS100</p>
+          <p>Formación avanzada en manipulación y programación de aplicaciones robóticas. Sistemas YRC1000/FS100.</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">Junio 2024</div>
+          <p class="d">Junio 2024</p>
           <h3>OMRON — TC51 y TC52</h3>
-          <p>Automatización Integrada AI1 y AI2 (8h cada uno)</p>
+          <p>Automatización Integrada AI1 y AI2 (8 horas cada curso).</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">Junio 2023</div>
+          <p class="d">Junio 2023</p>
           <h3>Siemens — SIMOVE Basic Training</h3>
-          <p>Sistemas AGV SIMOVE · SITRAIN Digital Industry Academy</p>
+          <p>Formación en sistemas AGV SIMOVE.</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">Julio 2022</div>
+          <p class="d">Julio 2022</p>
           <h3>FANUC — Operador TPE, Nivel A</h3>
-          <p>Diploma oficial FANUC Iberia (16h)</p>
+          <p>Diploma oficial FANUC Iberia. Programación y operación de robots con consola TPE (16 horas).</p>
         </div>
         <div class="cvp-edu-item">
-          <div class="d">2021</div>
+          <p class="d">2021</p>
           <h3>Gabinete Previcaman, S.L.</h3>
-          <p>Instalaciones, montajes y estructuras metálicas (20h)</p>
+          <p>Instalaciones, reparaciones, montajes, estructuras metálicas, cerrajería y carpintería metálica (20 horas).</p>
         </div>
       </div>
+    </section>
+
+    <section>
+      <h2>Competencias personales</h2>
+      <p>Aprendizaje rápido, resiliencia, trabajo bajo presión, trabajo en equipo, responsabilidad, puntualidad, confianza, proactividad y adaptabilidad.</p>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Español: nativo.</li>
+        <li>Inglés: nivel medio.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Información adicional</h2>
+      <ul>
+        <li>Carné de conducir B, AM, A2 y A.</li>
+        <li>Vehículo y moto propios.</li>
+        <li>Disponibilidad inmediata.</li>
+        <li>Recurso Preventivo en Construcción (60 horas).</li>
+      </ul>
     </section>
   </main>
 </div>
