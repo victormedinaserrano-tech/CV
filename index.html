@@ -183,6 +183,16 @@
     transition:width 1.2s cubic-bezier(.25,.8,.3,1);
   }
   .legend{color:var(--muted);font-size:.85rem;margin-top:1.4rem}
+  .skills-group-title{
+    font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;
+    color:var(--accent);margin:2.2rem 0 1.1rem;display:flex;align-items:center;gap:.8rem;
+    max-width:1100px;
+  }
+  .skills-group-title::after{content:"";flex:1;height:1px;background:var(--border)}
+  .skill .lvl-label{
+    margin-top:.55rem;font-size:.7rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:1.2px;color:var(--accent);
+  }
 
   /* ====== ROBOT / PLC BADGES ====== */
   .tech-cloud{display:flex;flex-wrap:wrap;gap:.7rem;max-width:1000px;margin-top:.4rem}
@@ -583,10 +593,14 @@
     <div class="t-item current reveal">
       <span class="t-date">Febrero 2024 — Actualidad</span>
       <h3>Técnico de Mejora Continua y Fiabilidad</h3>
-      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A. — Cliente ONCE</div>
       <ul>
-        <li>Mejora continua y fiabilidad de línea robotizada en cliente ONCE.</li>
-        <li>Optimización de procesos automatizados en entorno productivo real.</li>
+        <li>Supervisión y optimización de líneas de producción robotizadas, garantizando su correcto funcionamiento y rendimiento en un entorno productivo real.</li>
+        <li>Análisis y resolución de incidencias en sistemas automatizados (PLC, robots y periferia), diagnosticando causas raíz y aplicando acciones correctivas para minimizar paradas de producción.</li>
+        <li>Identificación e implantación de oportunidades de mejora para incrementar la disponibilidad y fiabilidad de las instalaciones, reduciendo tiempos de parada y averías recurrentes.</li>
+        <li>Colaboración en proyectos de mejora continua y fiabilidad de equipos industriales junto a los departamentos de producción y mantenimiento.</li>
+        <li>Seguimiento de indicadores de producción (KPIs) y análisis de datos mediante Power BI, elaborando cuadros de mando para la toma de decisiones y la detección de desviaciones.</li>
+        <li>Modificación y ajuste de programas de PLC y robots para adaptar las líneas a nuevas necesidades productivas.</li>
       </ul>
     </div>
     <div class="t-item reveal">
@@ -594,19 +608,24 @@
       <h3>Técnico en Automatización y Robótica Industrial</h3>
       <div class="company">LM GROUP</div>
       <ul>
-        <li>Creación de proyectos con PLC's Siemens.</li>
-        <li>Creación de proyectos con robots Doosan y Kuka.</li>
-        <li>Creación de proyectos con PLC's Berghof.</li>
-        <li>Creación de proyectos con robot Fanuc.</li>
+        <li>Desarrollo de proyectos de automatización desde cero para clientes como Siemens, Joma… : diseño del programa, puesta en marcha y entrega al cliente.</li>
+        <li>Modificación y ampliación de líneas de transporte logístico en funcionamiento, adaptándolas a nuevos flujos y necesidades de producción.</li>
+        <li>Programación y puesta en marcha de almacenes robotizados de paletización y almacenaje automático.</li>
+        <li>Diseño y programación de islas robotizadas con robots Doosan, Kuka y Fanuc.</li>
+        <li>Creación de proyectos con PLC's Siemens (TIA Portal) y Berghof, incluyendo pantallas HMI.</li>
+        <li>Puesta en marcha de instalaciones en casa del cliente, con ajuste, pruebas y formación a los operarios.</li>
       </ul>
     </div>
     <div class="t-item reveal">
       <span class="t-date">Junio 2018 — Diciembre 2019</span>
       <h3>Automatista</h3>
-      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A. — Sector automoción</div>
       <ul>
-        <li>Creación y modificación de proyectos con PLC's y pantallas Siemens.</li>
-        <li>Creación y modificación de proyectos con PLC's y pantallas Schneider.</li>
+        <li>Modificaciones y mejoras en líneas de producción del sector automoción para las factorías de Renault Palencia, Renault Motores Valladolid y Renault Valladolid.</li>
+        <li>Programación y modificación de PLC's Siemens (STEP 7 / TIA Portal) y Schneider (PL7) en instalaciones en producción.</li>
+        <li>Desarrollo y adaptación de pantallas HMI Siemens y Schneider para la supervisión y el control de las líneas.</li>
+        <li>Intervenciones en parada de planta, con pruebas y puesta en marcha en tiempos limitados para no afectar a la producción.</li>
+        <li>Diagnóstico y resolución de averías en instalaciones automatizadas junto a los equipos de mantenimiento del cliente.</li>
       </ul>
     </div>
     <div class="t-item reveal">
@@ -626,24 +645,37 @@
     <div class="kicker">Conocimientos técnicos</div>
     <h2>Software &amp; Tecnologías</h2>
   </div>
+  <div class="skills-group-title reveal">PLC &amp; HMI</div>
   <div class="skills-grid">
-    <div class="skill reveal"><div class="row"><span class="name">TIA Portal</span><span class="cat">PLC Siemens</span></div><div class="bar"><i data-lvl="95"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">STEP 7</span><span class="cat">PLC Siemens</span></div><div class="bar"><i data-lvl="90"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">PL7</span><span class="cat">PLC Schneider</span></div><div class="bar"><i data-lvl="80"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">Robot Doosan</span><span class="cat">Robótica colaborativa</span></div><div class="bar"><i data-lvl="90"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">WorkVisual</span><span class="cat">Robots Kuka</span></div><div class="bar"><i data-lvl="40"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">Fanuc</span><span class="cat">Robótica industrial</span></div><div class="bar"><i data-lvl="80"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">Robot ABB</span><span class="cat">Robótica industrial</span></div><div class="bar"><i data-lvl="50"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">RobotStudio</span><span class="cat">Robots ABB</span></div><div class="bar"><i data-lvl="50"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">YASKAWA</span><span class="cat">Robótica · Manipulación</span></div><div class="bar"><i data-lvl="75"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">OMRON</span><span class="cat">Automatización integrada</span></div><div class="bar"><i data-lvl="70"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">AGV · SIMOVE-B</span><span class="cat">Vehículos autónomos Siemens</span></div><div class="bar"><i data-lvl="75"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">MIR Robotic</span><span class="cat">Robots móviles</span></div><div class="bar"><i data-lvl="70"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">Power BI</span><span class="cat">Nivel medio-alto</span></div><div class="bar"><i data-lvl="80"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">Power Automate</span><span class="cat">Nivel medio</span></div><div class="bar"><i data-lvl="60"></i></div></div>
-    <div class="skill reveal"><div class="row"><span class="name">Microsoft Office</span><span class="cat">Ofimática</span></div><div class="bar"><i data-lvl="85"></i></div></div>
+    <div class="skill reveal"><div class="row"><span class="name">TIA Portal</span><span class="cat">PLC Siemens</span></div><div class="bar"><i data-lvl="95"></i></div><div class="lvl-label">Avanzado</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">STEP 7</span><span class="cat">PLC Siemens</span></div><div class="bar"><i data-lvl="90"></i></div><div class="lvl-label">Avanzado</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">PL7</span><span class="cat">PLC Schneider</span></div><div class="bar"><i data-lvl="80"></i></div><div class="lvl-label">Medio-alto</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">OMRON</span><span class="cat">Automatización integrada</span></div><div class="bar"><i data-lvl="70"></i></div><div class="lvl-label">Medio-alto</div></div>
   </div>
-  <p class="legend reveal">Nivel de dominio basado en años de uso y proyectos realizados.</p>
+
+  <div class="skills-group-title reveal">Robótica industrial y colaborativa</div>
+  <div class="skills-grid">
+    <div class="skill reveal"><div class="row"><span class="name">Robot Doosan</span><span class="cat">Robótica colaborativa</span></div><div class="bar"><i data-lvl="90"></i></div><div class="lvl-label">Avanzado</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Fanuc</span><span class="cat">Robótica industrial</span></div><div class="bar"><i data-lvl="80"></i></div><div class="lvl-label">Medio-alto</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">YASKAWA</span><span class="cat">Robótica · Manipulación</span></div><div class="bar"><i data-lvl="75"></i></div><div class="lvl-label">Medio-alto</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Robot ABB</span><span class="cat">Robótica industrial</span></div><div class="bar"><i data-lvl="50"></i></div><div class="lvl-label">Básico</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">RobotStudio</span><span class="cat">Robots ABB</span></div><div class="bar"><i data-lvl="50"></i></div><div class="lvl-label">Básico</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">WorkVisual</span><span class="cat">Robots Kuka</span></div><div class="bar"><i data-lvl="40"></i></div><div class="lvl-label">Básico</div></div>
+  </div>
+
+  <div class="skills-group-title reveal">Robots móviles &amp; AGV</div>
+  <div class="skills-grid">
+    <div class="skill reveal"><div class="row"><span class="name">AGV · SIMOVE-B</span><span class="cat">Vehículos autónomos Siemens</span></div><div class="bar"><i data-lvl="75"></i></div><div class="lvl-label">Medio-alto</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">MIR Robotic</span><span class="cat">Robots móviles</span></div><div class="bar"><i data-lvl="70"></i></div><div class="lvl-label">Medio-alto</div></div>
+  </div>
+
+  <div class="skills-group-title reveal">Datos &amp; Ofimática</div>
+  <div class="skills-grid">
+    <div class="skill reveal"><div class="row"><span class="name">Microsoft Office</span><span class="cat">Ofimática</span></div><div class="bar"><i data-lvl="85"></i></div><div class="lvl-label">Avanzado</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Power BI</span><span class="cat">Análisis de datos</span></div><div class="bar"><i data-lvl="80"></i></div><div class="lvl-label">Medio-alto</div></div>
+    <div class="skill reveal"><div class="row"><span class="name">Power Automate</span><span class="cat">Automatización de procesos</span></div><div class="bar"><i data-lvl="60"></i></div><div class="lvl-label">Medio</div></div>
+  </div>
+  <p class="legend reveal">Nivel de dominio basado en años de uso y proyectos realizados: Avanzado · Medio-alto · Medio · Básico.</p>
 
   <div class="sec-head reveal" style="margin-top:3.5rem">
     <div class="kicker">Ecosistema</div>
@@ -816,10 +848,10 @@
     <section>
       <h2>Competencias técnicas</h2>
       <ul>
-        <li><strong>PLC y automatización:</strong> Siemens TIA Portal y STEP 7; Schneider Electric PL7 y EcoStruxure Control Expert; Berghof; OMRON.</li>
-        <li><strong>Robótica industrial:</strong> Doosan Robotics, KUKA WorkVisual, Fanuc, ABB RobotStudio y Yaskawa.</li>
-        <li><strong>Robots móviles y AGV:</strong> MIR Robotic y Siemens SIMOVE-B.</li>
-        <li><strong>Software:</strong> Power BI (nivel medio-alto), Power Automate (nivel medio) y Microsoft Office.</li>
+        <li><strong>PLC y automatización:</strong> Siemens TIA Portal y STEP 7 (avanzado); Schneider Electric PL7 y EcoStruxure Control Expert (medio-alto); OMRON (medio-alto); Berghof.</li>
+        <li><strong>Robótica industrial:</strong> Doosan Robotics (avanzado); Fanuc y Yaskawa (medio-alto); ABB RobotStudio y KUKA WorkVisual (básico).</li>
+        <li><strong>Robots móviles y AGV:</strong> MIR Robotic y Siemens SIMOVE-B (medio-alto).</li>
+        <li><strong>Software:</strong> Microsoft Office (avanzado); Power BI (medio-alto); Power Automate (medio).</li>
       </ul>
     </section>
 
@@ -828,10 +860,13 @@
       <div class="cvp-job cur">
         <p class="d">Febrero 2024 - Actualidad</p>
         <h3>Técnico de Mejora Continua y Fiabilidad</h3>
-        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</p>
+        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A. — Cliente ONCE</p>
         <ul>
-          <li>Mejora continua y fiabilidad de línea robotizada en cliente ONCE.</li>
-          <li>Optimización de procesos automatizados en entorno productivo real.</li>
+          <li>Supervisión y optimización de líneas de producción robotizadas en entorno productivo real.</li>
+          <li>Análisis y resolución de incidencias en sistemas automatizados, diagnosticando causas raíz y minimizando paradas de producción.</li>
+          <li>Identificación de oportunidades de mejora para incrementar la disponibilidad y fiabilidad de las instalaciones.</li>
+          <li>Colaboración en proyectos de mejora continua y fiabilidad de equipos industriales.</li>
+          <li>Seguimiento de indicadores de producción y análisis de datos mediante Power BI para la toma de decisiones.</li>
         </ul>
       </div>
       <div class="cvp-job">
@@ -839,16 +874,19 @@
         <h3>Técnico en Automatización y Robótica Industrial</h3>
         <p class="c">LM GROUP</p>
         <ul>
-          <li>Creación de proyectos con PLC's Siemens y Berghof.</li>
-          <li>Creación de proyectos con robots Doosan, Kuka y Fanuc.</li>
+          <li>Desarrollo de proyectos de automatización desde cero y modificaciones sobre líneas de transporte logístico en funcionamiento, para clientes como Siemens, Joma…</li>
+          <li>Programación y puesta en marcha de almacenes robotizados e islas robotizadas con robots Doosan, Kuka y Fanuc.</li>
+          <li>Creación de proyectos con PLC's Siemens y Berghof, incluyendo pantallas HMI y puesta en marcha en casa del cliente.</li>
         </ul>
       </div>
       <div class="cvp-job">
         <p class="d">Junio 2018 - Diciembre 2019</p>
         <h3>Automatista</h3>
-        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</p>
+        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A. — Sector automoción</p>
         <ul>
-          <li>Creación y modificación de proyectos con PLC's y pantallas Siemens y Schneider.</li>
+          <li>Modificaciones y mejoras en líneas de producción del sector automoción para las factorías de Renault Palencia, Renault Motores Valladolid y Renault Valladolid.</li>
+          <li>Programación de PLC's y pantallas HMI Siemens y Schneider en instalaciones en producción, con intervenciones en parada de planta.</li>
+          <li>Diagnóstico y resolución de averías en instalaciones automatizadas junto a los equipos de mantenimiento del cliente.</li>
         </ul>
       </div>
       <div class="cvp-job">
