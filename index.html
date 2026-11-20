@@ -194,16 +194,6 @@
     letter-spacing:1.2px;color:var(--accent);
   }
 
-  /* ====== ROBOT / PLC BADGES ====== */
-  .tech-cloud{display:flex;flex-wrap:wrap;gap:.7rem;max-width:1000px;margin-top:.4rem}
-  .chip{
-    padding:.55rem 1.1rem;border-radius:999px;font-size:.9rem;font-weight:500;
-    background:var(--card);border:1px solid var(--border);color:#cdd6e5;
-    transition:border-color .2s, color .2s, transform .2s;
-  }
-  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-  .chip.hot{border-color:rgba(255,122,24,.5);color:var(--accent-2)}
-
   /* ====== CARDS (educación, competencias, extra) ====== */
   .cards{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -434,12 +424,6 @@
     box-shadow:none;
   }
   .legend{color:var(--muted)}
-  .chip{
-    background:rgba(255,255,255,.72);border:1px solid var(--border);
-    color:#424245;border-radius:999px;
-  }
-  .chip:hover{border-color:rgba(10,132,255,.4);color:var(--accent)}
-  .chip.hot{border-color:rgba(10,132,255,.2);color:#0874df;background:rgba(10,132,255,.06)}
   .cards{gap:1rem;max-width:1180px}
   .card{
     border-radius:22px;padding:1.5rem;
@@ -463,6 +447,32 @@
     border-radius:999px;padding:.65rem 1rem;
   }
   .comp::before{color:var(--accent)}
+
+  /* ====== MARCAS Y PLATAFORMAS ====== */
+  .brand-groups{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
+    gap:1rem;max-width:1180px;
+  }
+  .brand-group{
+    background:var(--card);border:1px solid rgba(255,255,255,.9);
+    border-radius:22px;padding:1.4rem 1.5rem;
+    box-shadow:0 8px 28px rgba(28,38,64,.055);
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .brand-group:hover{
+    transform:translateY(-4px);border-color:rgba(10,132,255,.2);
+    box-shadow:0 16px 36px rgba(28,38,64,.1);
+  }
+  .brand-group .bg-head{
+    display:flex;align-items:center;gap:.6rem;
+    font-size:.72rem;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--accent);margin-bottom:1rem;
+  }
+  .brand-group .bg-head::after{content:"";flex:1;height:1px;background:var(--border)}
+  .brand-group ul{list-style:none;display:flex;flex-direction:column;gap:.8rem;margin:0;padding:0}
+  .brand-group li{display:flex;flex-direction:column;gap:.1rem}
+  .brand-group .b-name{font-weight:600;font-size:.95rem;color:var(--text)}
+  .brand-group .b-desc{font-size:.8rem;color:var(--muted)}
   .lang{border-radius:20px}
   .dot{background:#e8e8ed;border-color:#e8e8ed}
   .dot.on{background:var(--accent);border-color:var(--accent);box-shadow:none}
@@ -648,9 +658,11 @@
     <div class="t-item reveal">
       <span class="t-date">Abril 2018 — Junio 2018</span>
       <h3>Automatista en prácticas</h3>
-      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</div>
+      <div class="company">DGH Robótica, Automatización y Mantenimiento Industrial, S.A. — Sector automoción</div>
       <ul>
-        <li>Creación y modificación de proyectos con PLC's Siemens.</li>
+        <li>Modificación de programas de PLC y pantallas HMI con TIA Portal en líneas de producción del sector automoción.</li>
+        <li>Apoyo en intervenciones sobre instalaciones en funcionamiento, realizando pruebas y verificaciones junto a automatistas sénior.</li>
+        <li>Familiarización con los estándares de programación y la documentación técnica utilizados en planta.</li>
       </ul>
     </div>
   </div>
@@ -698,19 +710,39 @@
     <div class="kicker">Ecosistema</div>
     <h2 style="font-size:1.5rem">Marcas y plataformas</h2>
   </div>
-  <div class="tech-cloud reveal">
-    <span class="chip hot">Siemens</span>
-    <span class="chip hot">Schneider Electric</span>
-    <span class="chip hot">Kuka</span>
-    <span class="chip hot">Fanuc</span>
-    <span class="chip hot">Doosan Robotics</span>
-    <span class="chip">Yaskawa</span>
-    <span class="chip">OMRON</span>
-    <span class="chip">ABB</span>
-    <span class="chip">Berghof</span>
-    <span class="chip">MIR</span>
-    <span class="chip">HMI / Pantallas industriales</span>
-    <span class="chip">AGV SIMOVE</span>
+  <div class="brand-groups">
+    <div class="brand-group reveal">
+      <div class="bg-head">PLC &amp; HMI</div>
+      <ul>
+        <li><span class="b-name">Siemens</span><span class="b-desc">TIA Portal · STEP 7 · Pantallas HMI</span></li>
+        <li><span class="b-name">Schneider Electric</span><span class="b-desc">PL7 · EcoStruxure Control Expert · HMI</span></li>
+        <li><span class="b-name">OMRON</span><span class="b-desc">Automatización integrada</span></li>
+        <li><span class="b-name">Berghof</span><span class="b-desc">PLC en proyectos de intralogística</span></li>
+      </ul>
+    </div>
+    <div class="brand-group reveal">
+      <div class="bg-head">Robótica industrial</div>
+      <ul>
+        <li><span class="b-name">Fanuc</span><span class="b-desc">Islas robotizadas · Paletización</span></li>
+        <li><span class="b-name">Yaskawa</span><span class="b-desc">YRC1000 / FS100 · Manipulación</span></li>
+        <li><span class="b-name">Kuka</span><span class="b-desc">WorkVisual · Islas robotizadas</span></li>
+        <li><span class="b-name">ABB</span><span class="b-desc">RobotStudio · Simulación</span></li>
+      </ul>
+    </div>
+    <div class="brand-group reveal">
+      <div class="bg-head">Robótica colaborativa y móvil</div>
+      <ul>
+        <li><span class="b-name">Doosan Robotics</span><span class="b-desc">Cobots · Programación y puesta en marcha</span></li>
+        <li><span class="b-name">MIR Robotic</span><span class="b-desc">Robots móviles autónomos (AMR)</span></li>
+      </ul>
+    </div>
+    <div class="brand-group reveal">
+      <div class="bg-head">AGV &amp; Intralogística</div>
+      <ul>
+        <li><span class="b-name">Siemens SIMOVE</span><span class="b-desc">Sistemas AGV · Formación oficial Siemens</span></li>
+        <li><span class="b-name">Almacenes robotizados</span><span class="b-desc">Paletización y almacenaje automático</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -911,9 +943,10 @@
       <div class="cvp-job">
         <p class="d">Abril 2018 - Junio 2018</p>
         <h3>Automatista en prácticas</h3>
-        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A.</p>
+        <p class="c">DGH Robótica, Automatización y Mantenimiento Industrial, S.A. — Sector automoción</p>
         <ul>
-          <li>Creación y modificación de proyectos con PLC's Siemens.</li>
+          <li>Modificación de programas de PLC y pantallas HMI con TIA Portal en líneas de producción del sector automoción.</li>
+          <li>Apoyo en intervenciones sobre instalaciones en funcionamiento, con pruebas y verificaciones junto a automatistas sénior.</li>
         </ul>
       </div>
     </section>
