@@ -218,6 +218,17 @@
   .card h3{font-size:1.15rem;margin-bottom:.2rem}
   .card .when{color:var(--accent);font-size:.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase}
   .card p{color:var(--muted);font-size:.93rem;margin-top:.5rem}
+  .card.cert{
+    border-color:rgba(0,212,255,.35);
+    background:linear-gradient(165deg,rgba(0,212,255,.09),var(--card) 60%);
+  }
+  .card.cert:hover{border-color:var(--accent);box-shadow:0 0 26px rgba(0,212,255,.16)}
+  .cert-brand{
+    display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:2.5px;
+    text-transform:uppercase;color:var(--accent);
+    border:1px solid rgba(0,212,255,.45);border-radius:999px;
+    padding:.3rem .8rem;margin-bottom:.9rem;
+  }
 
   .comp-grid{display:flex;flex-wrap:wrap;gap:.8rem;max-width:900px}
   .comp{
@@ -441,6 +452,12 @@
   .card .icon{font-size:1.55rem}
   .card .when{color:var(--accent);letter-spacing:.6px}
   .card p{color:var(--muted)}
+  .card.cert{
+    border-color:rgba(10,132,255,.3);
+    background:linear-gradient(165deg,rgba(10,132,255,.07),rgba(255,255,255,.9) 60%);
+  }
+  .card.cert:hover{border-color:rgba(10,132,255,.45);box-shadow:0 16px 36px rgba(28,38,64,.12)}
+  .cert-brand{color:var(--accent);border-color:rgba(10,132,255,.35)}
   .comp{
     background:rgba(255,255,255,.72);border:1px solid var(--border);
     border-radius:999px;padding:.65rem 1rem;
@@ -703,6 +720,42 @@
     <div class="kicker">Historial educativo</div>
     <h2>Formación &amp; Certificaciones</h2>
   </div>
+
+  <div class="skills-group-title reveal">Certificaciones oficiales de fabricante</div>
+  <div class="cards">
+    <div class="card cert reveal">
+      <div class="cert-brand">Siemens</div>
+      <div class="when">Junio 2023</div>
+      <h3>SIMOVE Basic Training</h3>
+      <p>Formación oficial Siemens en sistemas AGV SIMOVE.</p>
+    </div>
+    <div class="card cert reveal">
+      <div class="cert-brand">Yaskawa</div>
+      <div class="when">Junio 2024</div>
+      <h3>Formación Avanzada — Manipulación</h3>
+      <p>Yaskawa Academy. Programación de aplicaciones robóticas con instrucciones avanzadas (sistema YRC1000/FS100).</p>
+    </div>
+    <div class="card cert reveal">
+      <div class="cert-brand">Fanuc</div>
+      <div class="when">Julio 2022</div>
+      <h3>Operador TPE — Nivel A</h3>
+      <p>Diploma oficial de FANUC Iberia. Programación y operación de robots con consola TPE (16h, Toledo).</p>
+    </div>
+    <div class="card cert reveal">
+      <div class="cert-brand">Schneider</div>
+      <div class="when">Febrero 2025</div>
+      <h3>EcoStruxure Control Expert</h3>
+      <p>CTRLEXPSW1: Programación de autómatas MODICON M340/M580 — Nivel Básico. Certificado oficial de Schneider Electric (24h lectivas).</p>
+    </div>
+    <div class="card cert reveal">
+      <div class="cert-brand">Omron</div>
+      <div class="when">Junio 2024</div>
+      <h3>TC51 y TC52 — Automatización Integrada</h3>
+      <p>Cursos oficiales AI1 y AI2, presenciales y certificados por OMRON Electronics Iberia (8h cada uno).</p>
+    </div>
+  </div>
+
+  <div class="skills-group-title reveal" style="margin-top:3rem">Formación académica y complementaria</div>
   <div class="cards">
     <div class="card reveal">
       <div class="icon">🎓</div>
@@ -723,36 +776,6 @@
       <p>Formación semipresencial de 60h, homologada por la Fundación Laboral de la Construcción e impartida por Vitaly Health Services, S.L.</p>
     </div>
     <div class="card reveal">
-      <div class="icon">🟩</div>
-      <div class="when">Febrero 2025</div>
-      <h3>SCHNEIDER — EcoStruxure Control Expert</h3>
-      <p>CTRLEXPSW1: Programación de autómatas MODICON M340/M580 — Nivel Básico. Certificado oficial de Schneider Electric (24h lectivas).</p>
-    </div>
-    <div class="card reveal">
-      <div class="icon">🤖</div>
-      <div class="when">Junio 2024</div>
-      <h3>YASKAWA — Formación Avanzada</h3>
-      <p>5.6 Formación Avanzada — Manipulación. Yaskawa Academy. Programación de aplicaciones robóticas con instrucciones avanzadas (sistema YRC1000/FS100).</p>
-    </div>
-    <div class="card reveal">
-      <div class="icon">⚙️</div>
-      <div class="when">Junio 2024</div>
-      <h3>OMRON — TC51 y TC52</h3>
-      <p>Automatización Integrada AI1 y AI2. Cursos oficiales presenciales certificados por OMRON Electronics Iberia (8h cada uno).</p>
-    </div>
-    <div class="card reveal">
-      <div class="icon">🚚</div>
-      <div class="when">Junio 2023</div>
-      <h3>SIEMENS — SIMOVE Basic Training</h3>
-      <p>Formación oficial Siemens en sistemas AGV SIMOVE.</p>
-    </div>
-    <div class="card reveal">
-      <div class="icon">🦾</div>
-      <div class="when">Julio 2022</div>
-      <h3>FANUC — Operador TPE, Nivel A</h3>
-      <p>Diploma oficial de FANUC Iberia. Programación y operación de robots con consola TPE (16h, Toledo).</p>
-    </div>
-    <div class="card reveal">
       <div class="icon">🛠️</div>
       <div class="when">2021</div>
       <h3>Gabinete Previcaman, S.L.</h3>
@@ -764,19 +787,16 @@
 <!-- ================= COMPETENCIAS ================= -->
 <section id="competencias">
   <div class="sec-head reveal">
-    <div class="kicker">Perfil personal</div>
+    <div class="kicker">Perfil profesional</div>
     <h2>Competencias</h2>
   </div>
   <div class="comp-grid reveal">
-    <span class="comp">Aprendizaje rápido</span>
-    <span class="comp">Resiliencia</span>
-    <span class="comp">Trabajo bajo presión</span>
-    <span class="comp">Trabajo en equipo</span>
-    <span class="comp">Responsabilidad</span>
-    <span class="comp">Puntualidad</span>
-    <span class="comp">Confianza</span>
-    <span class="comp">Proactividad</span>
-    <span class="comp">Adaptabilidad</span>
+    <span class="comp">Diagnóstico y resolución de averías</span>
+    <span class="comp">Capacidad de análisis de procesos</span>
+    <span class="comp">Programación y modificación de automatismos</span>
+    <span class="comp">Trabajo en entornos industriales</span>
+    <span class="comp">Mejora continua</span>
+    <span class="comp">Trabajo multidisciplinar</span>
   </div>
 
   <div class="sec-head reveal" style="margin-top:3.5rem">
@@ -804,7 +824,6 @@
     <span class="comp">Carné de conducir B, AM, A2 y A</span>
     <span class="comp">Vehículo propio</span>
     <span class="comp">Moto propia</span>
-    <span class="comp">Disponibilidad inmediata</span>
     <span class="comp">Recurso Preventivo (60h)</span>
   </div>
 </section>
@@ -820,7 +839,7 @@
     <div class="c-card reveal">
       <div class="icon">📍</div>
       <div class="lbl">Ubicación</div>
-      <div class="val">Toledo, España</div>
+      <div class="val">Toledo, España<br><small>Disponibilidad para desplazamientos</small></div>
     </div>
   </div>
 </section>
@@ -836,7 +855,7 @@
   <header class="cvp-header">
     <h1>Víctor Medina Serrano</h1>
     <p class="cvp-role">Técnico en Automatización y Robótica Industrial</p>
-    <p class="cvp-contact-line">Toledo, España | LinkedIn: https://www.linkedin.com/in/victor-medina-serrano-838675167/</p>
+    <p class="cvp-contact-line">Toledo, España (disponibilidad para desplazamientos) | LinkedIn: https://www.linkedin.com/in/victor-medina-serrano-838675167/</p>
   </header>
 
   <main class="cvp-main">
@@ -900,7 +919,38 @@
     </section>
 
     <section>
-      <h2>Formación y certificaciones</h2>
+      <h2>Certificaciones oficiales de fabricante</h2>
+      <div class="cvp-edu">
+        <div class="cvp-edu-item">
+          <p class="d">Junio 2023</p>
+          <h3>SIEMENS — SIMOVE Basic Training</h3>
+          <p>Formación oficial Siemens en sistemas AGV SIMOVE.</p>
+        </div>
+        <div class="cvp-edu-item">
+          <p class="d">Junio 2024</p>
+          <h3>YASKAWA — Formación Avanzada</h3>
+          <p>Yaskawa Academy. Manipulación y programación de aplicaciones robóticas con instrucciones avanzadas. Sistemas YRC1000/FS100.</p>
+        </div>
+        <div class="cvp-edu-item">
+          <p class="d">Julio 2022</p>
+          <h3>FANUC — Operador TPE, Nivel A</h3>
+          <p>Diploma oficial FANUC Iberia. Programación y operación de robots con consola TPE (16 horas).</p>
+        </div>
+        <div class="cvp-edu-item">
+          <p class="d">Febrero 2025</p>
+          <h3>SCHNEIDER — EcoStruxure Control Expert</h3>
+          <p>Programación de autómatas MODICON M340/M580, nivel básico. Certificado oficial Schneider Electric (24 horas).</p>
+        </div>
+        <div class="cvp-edu-item">
+          <p class="d">Junio 2024</p>
+          <h3>OMRON — TC51 y TC52</h3>
+          <p>Automatización Integrada AI1 y AI2. Cursos oficiales certificados por OMRON Electronics Iberia (8 horas cada uno).</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formación académica y complementaria</h2>
       <div class="cvp-edu">
         <div class="cvp-edu-item">
           <p class="d">2016 - 2018</p>
@@ -918,31 +968,6 @@
           <p>Formación semipresencial de 60 horas homologada por la Fundación Laboral de la Construcción e impartida por Vitaly Health Services, S.L.</p>
         </div>
         <div class="cvp-edu-item">
-          <p class="d">Febrero 2025</p>
-          <h3>Schneider — EcoStruxure Control Expert</h3>
-          <p>Programación de autómatas MODICON M340/M580, nivel básico. Certificado oficial Schneider Electric (24 horas).</p>
-        </div>
-        <div class="cvp-edu-item">
-          <p class="d">Junio 2024</p>
-          <h3>Yaskawa Academy — Formación Avanzada</h3>
-          <p>Formación avanzada en manipulación y programación de aplicaciones robóticas. Sistemas YRC1000/FS100.</p>
-        </div>
-        <div class="cvp-edu-item">
-          <p class="d">Junio 2024</p>
-          <h3>OMRON — TC51 y TC52</h3>
-          <p>Automatización Integrada AI1 y AI2 (8 horas cada curso).</p>
-        </div>
-        <div class="cvp-edu-item">
-          <p class="d">Junio 2023</p>
-          <h3>Siemens — SIMOVE Basic Training</h3>
-          <p>Formación en sistemas AGV SIMOVE.</p>
-        </div>
-        <div class="cvp-edu-item">
-          <p class="d">Julio 2022</p>
-          <h3>FANUC — Operador TPE, Nivel A</h3>
-          <p>Diploma oficial FANUC Iberia. Programación y operación de robots con consola TPE (16 horas).</p>
-        </div>
-        <div class="cvp-edu-item">
           <p class="d">2021</p>
           <h3>Gabinete Previcaman, S.L.</h3>
           <p>Instalaciones, reparaciones, montajes, estructuras metálicas, cerrajería y carpintería metálica (20 horas).</p>
@@ -951,8 +976,8 @@
     </section>
 
     <section>
-      <h2>Competencias personales</h2>
-      <p>Aprendizaje rápido, resiliencia, trabajo bajo presión, trabajo en equipo, responsabilidad, puntualidad, confianza, proactividad y adaptabilidad.</p>
+      <h2>Competencias profesionales</h2>
+      <p>Diagnóstico y resolución de averías, capacidad de análisis de procesos, programación y modificación de automatismos, trabajo en entornos industriales, mejora continua y trabajo multidisciplinar.</p>
     </section>
 
     <section>
@@ -968,7 +993,6 @@
       <ul>
         <li>Carné de conducir B, AM, A2 y A.</li>
         <li>Vehículo y moto propios.</li>
-        <li>Disponibilidad inmediata.</li>
         <li>Recurso Preventivo en Construcción (60 horas).</li>
       </ul>
     </section>
